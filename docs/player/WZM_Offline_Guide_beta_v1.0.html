@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WZM Offline — Player Guide v0.1 beta</title>
+<style>
+  @page { size: A4; margin: 14mm 14mm 14mm 14mm; }
+  :root { --ink:#16202a; --muted:#5b6873; --accent:#e8501a; --blue:#1f7bb6; --ok:#1e8e4f; --warn:#b7791f; --bad:#c0392b; --line:#d9e0e6; --soft:#f4f6f8; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; color: var(--ink); font-size: 10.2pt; line-height: 1.42; margin: 0; }
+  h1 { font-size: 22pt; margin: 0 0 2px; letter-spacing: .5px; }
+  h2 { font-size: 13pt; margin: 16px 0 6px; padding-bottom: 3px; border-bottom: 2px solid var(--accent); letter-spacing: .3px; }
+  h3 { font-size: 10.8pt; margin: 10px 0 4px; }
+  p { margin: 4px 0 6px; }
+  ul, ol { margin: 4px 0 6px 18px; padding: 0; }
+  li { margin: 2px 0; }
+  .sub { color: var(--muted); font-size: 10pt; }
+  .badge { display:inline-block; font-size: 8.5pt; font-weight: 700; padding: 1px 7px; border-radius: 9px; color:#fff; background: var(--accent); vertical-align: middle; }
+  .meta { display:flex; gap:18px; margin: 8px 0 4px; font-size: 9pt; color: var(--muted); flex-wrap: wrap; }
+  .box { border:1px solid var(--line); background: var(--soft); border-radius: 6px; padding: 7px 10px; margin: 6px 0; }
+  .keep { border-left: 4px solid var(--accent); }
+  table { width: 100%; border-collapse: collapse; margin: 4px 0 8px; font-size: 9.4pt; }
+  th, td { border: 1px solid var(--line); padding: 4px 6px; text-align: left; vertical-align: top; }
+  th { background: var(--soft); font-weight: 700; }
+  .ok { color: var(--ok); font-weight: 700; }
+  .warn { color: var(--warn); font-weight: 700; }
+  .bad { color: var(--bad); font-weight: 700; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .page { page-break-before: always; }
+  code { font-family: Menlo, monospace; font-size: 8.8pt; background: #eef1f4; padding: 0 3px; border-radius: 3px; }
+  .foot { margin-top: 14px; font-size: 8.5pt; color: var(--muted); border-top: 1px solid var(--line); padding-top: 6px; }
+</style>
+</head>
+<body>
+
+<h1>WZM Offline — Player Guide</h1>
+<div class="sub">Warzone Mobile 4.5.2, playable offline from the APK alone (no root, no computer) <span class="badge">beta v1.0</span></div>
+<div class="meta">
+  <span><b>Guide:</b> beta v1.0</span><span><b>App build:</b> r19</span><span><b>Game:</b> 4.5.2 (build 22729281)</span>
+  <span><b>Tested on:</b> OnePlus 12R, Android 16</span><span><b>Date:</b> 12 Nov 2026</span>
+</div>
+
+<h2>1. Quick start (30 seconds)</h2>
+<ol>
+  <li>Open the game from its icon. Wait for the main menu (about 30–60 s). If it freezes on the Activision logo, <b>wait</b> — it restarts itself.</li>
+  <li>About 20 s after the menu appears, a small orange <b>WZ</b> ball shows on the left. Everything is already unlocked.</li>
+  <li>Tap the ball → choose Map, Mode, AI difficulty, Class, enemy/friendly bots → tap <b>PLAY</b>.</li>
+  <li>You spawn with the chosen class; the bots join a few seconds later. Pause → Main Menu ends the match.</li>
+</ol>
+
+<h2>2. The floating ball</h2>
+<ul>
+  <li><b>Tap</b> the ball → opens the OPTIONS menu (it springs out of the ball). <b>Drag</b> it anywhere; it snaps to the screen edge.</li>
+  <li>After <b>10 seconds</b> without use it <b>fades to a faint ball</b> (still visible) in the same place.</li>
+  <li>When it is faint: <b>tap once</b> to bring it back, then <b>tap again</b> to open the menu.</li>
+  <li>It also works during a match (e.g. to change graphics live).</li>
+</ul>
+
+<h2>3. OPTIONS menu</h2>
+<h3>MATCH tab</h3>
+<table>
+  <tr><th style="width:24%">Setting</th><th>What it does</th></tr>
+  <tr><td>Map</td><td>Nuketown, Crash (fully tested), Verdansk (works, slow, see issues), Hardhat, Slaughterhouse, Downtown, Rebirth Island (untested with bots).</td></tr>
+  <tr><td>Mode</td><td>Team Deathmatch is tested. Domination, Hardpoint, Kill Confirmed, Search &amp; Destroy, Frontline are experimental.</td></tr>
+  <tr><td>AI Difficulty</td><td>Recruit, Regular, Hardened, Veteran.</td></tr>
+  <tr><td>Class</td><td>Which of your 5 Gear Up loadouts you spawn with (auto-picked, no class screen).</td></tr>
+  <tr><td>Enemy / Friendly Bots</td><td>1–6 enemies, 0–6 allies, at most 8 bots in total.</td></tr>
+  <tr><td>Camera</td><td><b>First person</b> or <b>Third person</b>. Changes instantly during a match (open the ball mid-match) and is remembered.</td></tr>
+</table>
+<p>Bottom bar: <b>Export Logs</b> (see §7), <b>Reset Tab</b> (defaults for the current tab), <b>Back</b> (close). The right side explains the selected row.</p>
+
+<h3>GRAPHICS tab (DISPLAY / QUALITY / EFFECTS / ADVANCED)</h3>
+<p>Each setting says whether it applies <b>instantly</b> (menu and during a match) or at the <b>next match</b>. Your choices are remembered.</p>
+<table>
+  <tr><th style="width:30%">Applies instantly</th><th>Applies at the next match</th></tr>
+  <tr><td>Resolution (540p–Native), Dynamic resolution, Render preset, Frame rate cap, Anti-aliasing, SMAA quality, Temporal mode, Sharpening (CAS), Texture filtering, Motion blur, Colour-blind filter, Advanced</td>
+      <td>Texture quality, Detail level, Reflections, Shadow cascades, Ambient occlusion / GI</td></tr>
+</table>
+<div class="box"><b>Recommended:</b> Graphics Override <b>Enabled</b>, Resolution <b>640p</b>, Dynamic resolution <b>Disabled</b> (it causes the blur), Frame cap <b>60</b>, AA <b>SMAA</b>, Sharpening <b>0.8</b>, Textures <b>Very High</b>, Filtering <b>Aniso 16x</b>.</div>
+
+<h2>4. PLAY, Gear Up and restarts — the one rule to remember</h2>
+<div class="box keep">
+  <b>PLAY is instant only in a "fresh" game session.</b> After you <b>open GEAR UP</b> or <b>finish a match</b>, the PLAY button turns amber and reads <b>↻ RESTART &amp; PLAY</b>: the game restarts itself (~1 minute) and your match starts automatically. <b>Do not tap anything while it restarts.</b>
+</div>
+<ul>
+  <li><b>Why:</b> Gear Up's weapon list uses a game memory pool that a match also needs; and the game's protection closes a second match in the same session. A clean restart avoids both.</li>
+  <li><b>Gear Up (3D):</b> use the game's own GEAR UP tile. In a fresh session the first tap loads the <b>3D menu</b>: the status says "Loading 3D Gear Up", the menu refreshes once, and about <b>1 minute</b> later Gear Up <b>opens by itself</b> with 3D operators and guns. Don't tap during that minute.</li>
+  <li><b>Gear Up after a match</b> opens without 3D (the 3D menu only loads before the first match of a session).</li>
+  <li><b>Operator and skin:</b> Gear Up → Operator → pick operator and skin → EQUIP. Your operator, skin, finishing move, taunt and intro are saved (every 30 s) and used in every match, also after restarts. Loadouts save the same way.</li>
+  <li><b>After a match:</b> Pause → Main Menu → Yes returns to a working main menu with everything unlocked again.</li>
+</ul>
+
+<div class="page"></div>
+<h2>5. What works</h2>
+<table>
+  <tr><th style="width:34%">Feature</th><th style="width:12%">Status</th><th>Notes</th></tr>
+  <tr><td>Boot to main menu without root / computer</td><td class="ok">Working</td><td>Logo stalls are auto-restarted (up to 4 times in a row).</td></tr>
+  <tr><td>Unlock everything (guns, operators, skins, camos, attachments, perks, streaks)</td><td class="ok">Working</td><td>Automatic on every boot and after every match.</td></tr>
+  <tr><td>TDM on Nuketown / Crash with real bots</td><td class="ok">Working</td><td>You spawn with your class; Veteran bots fight back.</td></tr>
+  <tr><td>Gear Up (weapons, blueprints, equip) and saved loadouts</td><td class="ok">Working</td><td>Loadouts carry into matches (verified: AK-74 PAYBACK, 9MM Daemon).</td></tr>
+  <tr><td>3D previews in Gear Up (operator model, gun model in Weapon Select / customize / camo, 3D menu backdrop)</td><td class="ok">Working</td><td>New in r19. Loads on the first Gear Up tap of a session (~1 min).</td></tr>
+  <tr><td>Operator + skin selection carried into matches</td><td class="ok">Working</td><td>New in r17. Verified: Soap unmasked, Valeria Black Cell, Samurai skin.</td></tr>
+  <tr><td>Third-person camera</td><td class="ok">Working</td><td>New in r18. Ball → MATCH → Camera; live switch in a match.</td></tr>
+  <tr><td>Return to main menu after a match</td><td class="ok">Working</td><td>No black screen.</td></tr>
+  <tr><td>Live graphics menu</td><td class="ok">Working</td><td>Resolution etc. change instantly.</td></tr>
+  <tr><td>Export Logs (share sheet)</td><td class="ok">Working</td><td>Sends ~150 KB of text via WhatsApp/Telegram/email.</td></tr>
+</table>
+
+<h2>6. Known issues and what is broken</h2>
+<table>
+  <tr><th style="width:34%">Issue</th><th style="width:12%">Status</th><th>What to do / notes</th></tr>
+  <tr><td>Next match after Gear Up or after a match needs a restart</td><td class="warn">By design</td><td>Use ↻ RESTART &amp; PLAY; wait ~1 min.</td></tr>
+  <tr><td>Second match in the same game session</td><td class="bad">Broken</td><td>Game protection closes it; the restart avoids this.</td></tr>
+  <tr><td>Logo stall at start (about half of launches)</td><td class="warn">Auto-fixed</td><td>Wait; it restarts itself. If it gives up after 4 tries, close and reopen the game.</td></tr>
+  <tr><td>Other phones (e.g. Redmi Note 10 Pro, Android 13): PLAY fails, "unable to intercept function"</td><td class="bad">Broken</td><td>Phone memory layout; a fix was tried and reverted. Send Export Logs from that phone.</td></tr>
+  <tr><td>Instant PLAY after the 3D Gear Up</td><td class="bad">Not possible yet</td><td>Switching from the 3D menu straight into a match crashes the game; the restart is used instead.</td></tr>
+  <tr><td>3D previews in Gear Up opened after a match</td><td class="warn">Not 3D</td><td>Restart the game (or play a match via RESTART &amp; PLAY) and open Gear Up before playing.</td></tr>
+  <tr><td>Emblem shows "developer error"</td><td class="bad">Not working</td><td>Planned.</td></tr>
+  <tr><td>Verdansk</td><td class="warn">Partial</td><td>Loads slowly; game-default textures are forced; may close itself ~70 s in (known, not fixed).</td></tr>
+  <tr><td>Battle Royale, Broadcast</td><td class="bad">Not available</td><td>Not playable offline in this build.</td></tr>
+  <tr><td>Modes other than TDM; maps other than Nuketown/Crash</td><td class="warn">Experimental</td><td>May not start or bots may misbehave.</td></tr>
+  <tr><td>No match time limit setting</td><td class="warn">Missing</td><td>Leave via Pause → Main Menu.</td></tr>
+  <tr><td>Graphics: Ultra textures, Reflections, AO/GI, Advanced settings</td><td class="warn">Experimental</td><td>Ultra flickers grey; reflections showed wrong colours on Crash; GI crashed matches; Advanced settings are unnamed game options and may crash. "Lighting" was removed after it crashed a match.</td></tr>
+  <tr><td>Occasional freeze then crash</td><td class="warn">Rare</td><td>Seen as GPU hangs on hot phones; let the phone cool down.</td></tr>
+</table>
+
+<h2>7. If something goes wrong — Export Logs</h2>
+<ol>
+  <li>Tap the ball → <b>Export Logs</b> (bottom bar).</li>
+  <li>Android's share menu opens with the log as text (device, app version, settings, agent log, game log). Nothing is saved on the phone.</li>
+  <li>Send it to yourself (WhatsApp/Telegram/email/Drive) and pass it on for fixing. Do it right after the problem, before restarting the game.</li>
+</ol>
+
+<h2>8. Things to keep in mind</h2>
+<ul>
+  <li><b>Never uninstall the game.</b> Uninstalling deletes ~13 GB of game data in <code>Android/data/com.activision.callofduty.warzone</code>. Updates are always installed <i>over</i> the existing game.</li>
+  <li><b>Back up</b> that data folder before experimenting or moving to another phone (restore into the same folder before first launch).</li>
+  <li>Your Gear Up loadouts and panel settings are stored inside the game's private storage on each phone — a new phone starts with defaults.</li>
+  <li>Don't tap during ↻ RESTART &amp; PLAY or during a logo stall restart.</li>
+  <li>No internet or Activision account is needed to play. Leave Wi-Fi on only if you need wireless debugging.</li>
+  <li>Native resolution and Uncapped fps make the phone hotter; 640p / 60 fps is the tested, stable setup.</li>
+  <li>The version label (bottom-right of the menu, e.g. <b>r19</b>) tells which build you have — include it when reporting issues.</li>
+</ul>
+
+<h2>9. Quick troubleshooting</h2>
+<table>
+  <tr><th style="width:36%">You see</th><th>Do this</th></tr>
+  <tr><td>Stuck on the Activision logo</td><td>Wait ~1 min (auto-restart). Still stuck → close the game and reopen.</td></tr>
+  <tr><td>No WZ ball</td><td>Wait 20–30 s after the menu appears; look for the faint ball where it was and tap it.</td></tr>
+  <tr><td>Gear Up does not open after the tap</td><td>Wait about 1 minute (3D is loading, the menu refreshes once); it opens by itself.</td></tr>
+  <tr><td>Operator or skin wrong in a match</td><td>Re-equip it in Gear Up and wait 30 s before pressing PLAY (it saves every 30 s).</td></tr>
+  <tr><td>Status says ERROR / "Offline setup failed"</td><td>Export Logs, then close and reopen the game.</td></tr>
+  <tr><td>Black screen after leaving a match</td><td>Wait ~15 s; if it stays black, close and reopen; send logs.</td></tr>
+  <tr><td>Spectating, nobody spawns</td><td>Leave via Pause → Main Menu and press PLAY again; send logs.</td></tr>
+  <tr><td>Game closed during a match</td><td>Reopen; check graphics (turn off experimental options); send logs.</td></tr>
+</table>
+
+<h2>10. What's new</h2>
+<ul>
+  <li><b>r19:</b> 3D Gear Up (operator and gun models, 3D menu backdrop), loaded on the first Gear Up tap. PLAY from a fresh start stays instant.</li>
+  <li><b>r18:</b> Third-person camera (live switch). Faint ball instead of fully hidden.</li>
+  <li><b>r17:</b> Operator, skin, finishing move, taunt and intro saved and used in matches. Fixed Gear Up opening by itself.</li>
+</ul>
+<div class="foot">WZM Offline Player Guide — version beta v1.0 (app build r19). Personal offline project; for your own installed copy of the game. Next planned: instant PLAY after Gear Up, second match without restart, emblem fix, support for more phones.</div>
+</body>
+</html>

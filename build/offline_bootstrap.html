@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Warzone Mobile Offline</title>
+<style>html,body{margin:0;height:100%;background:#000;color:#777;font:14px sans-serif}
+#s{position:fixed;bottom:12px;left:14px}</style></head>
+<body><div id="s">Starting offline...</div><script>
+(function(){
+ var steps=[[0,'sysReady'],[3000,'passPreloginFence'],[6000,'closeWebView']];
+ function go(){
+  if(!window.jsBridge){setTimeout(go,100);return;}
+  steps.forEach(function(s){setTimeout(function(){
+   try{window.jsBridge.post(s[1],null);console.log('offline boot: '+s[1]);}
+   catch(e){console.error('offline boot failed: '+s[1]+' '+e);}
+  },s[0]);});
+ }
+ go();
+})();
+</script></body></html>

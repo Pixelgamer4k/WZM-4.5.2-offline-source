@@ -1,0 +1,6 @@
+id=wzm_offline
+name=WZM Offline Shell
+version=v1.0
+versionCode=1
+author=LO
+description=Starts frida-server and auto-applies the offline fence script when Warzone Mobile starts. Removes the Mac from the boot loop. Does not touch the game's protection layer.

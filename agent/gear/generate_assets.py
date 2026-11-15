@@ -1,0 +1,158 @@
+#!/usr/bin/env python3
+"""MAC STATIC ONLY: embed original WZM 4.5.2 Lua and hub bytes into local JS.
+
+No native execution, ADB, Frida, APK edits, network, or other output folders.
+"""
+from __future__ import annotations
+import argparse
+import hashlib
+import json
+from pathlib import Path
+import struct
+
+HERE = Path(__file__).resolve().parent
+PROJECTS = next((candidate for candidate in HERE.parents
+                 if (candidate / 'WarzoneMobileOffline/analysis/frida_tools/lua_bridge').is_dir()), None)
+if PROJECTS is None:
+    raise RuntimeError('Original authoritative WarzoneMobileOffline project missing')
+ORIGINAL = PROJECTS / 'WarzoneMobileOffline'
+LUA = ORIGINAL / 'analysis/frida_tools/lua_bridge'
+HUB = ORIGINAL / 'analysis/frontend_offline_static_20261104/module_11d1836.ljbc'
+LIB = ORIGINAL / 'input/libgame.so'
+EXPECTED_LIBRARY = 'c8f5e9df317b7442567e61255ac7894bbf1b6693c30fcfd3a6ee6cde6c04b7d7'
+EXPECTED_BUILD_ID = '9528f1d264b40639b57e14998e01d080'
+PAYLOADS = {
+    'fake_player_data': ('fake_player_data.lua', '7609e213fb86d9baa229c39ae67edc0cb0d71070cf535795759fb0c2e4105706'),
+    'seed_all_loadouts': ('seed_all_loadouts.lua', 'd2ea31bbfb41d12c0e5805e8d37518ab4e32d501bd76c175293a35039e43d901'),
+    'open_gear_up': ('open_gear_up.lua', 'ca72a950c81a63906ebf7833490cabebeafcab675c394aea76b043884e75de9f'),
+}
+HUB_SHA = '5483d73aeade40684f2fe3ecb167f09ed6cc06145260b5727bb53596fbb50822'
+CODE_RVAS = {
+    'lui_frame': 0x337c1c0,
+    'lua_load': 0x4490778,
+    'lua_pcall': 0x4486bc4,
+    'lua_tostring': 0x4483720,
+    'profile_bind': 0x331aaec,
+    'preview_update': 0x355ca54,
+}
+
+
+def sha(b: bytes) -> str:
+    return hashlib.sha256(b).hexdigest()
+
+
+def outputs():
+    originals = {}
+    for key, (name, expected) in PAYLOADS.items():
+        raw = (LUA / name).read_bytes()
+        if sha(raw) != expected or raw.decode('utf8').encode('utf8') != raw:
+            raise ValueError('Original profile Lua differs: ' + name)
+        originals[key] = {
+            'source': 'analysis/frida_tools/lua_bridge/' + name,
+            'byteLength': len(raw), 'sha256': expected, 'text': raw.decode('utf8'),
+        }
+    raw_hub = HUB.read_bytes()
+    if sha(raw_hub) != HUB_SHA:
+        raise ValueError('Original hub bytecode is not the pinned source')
+    original_lib = LIB.read_bytes()
+    if sha(original_lib) != EXPECTED_LIBRARY:
+        raise ValueError('Original libgame.so checksum mismatch')
+    if original_lib[:6] != b'\x7fELF\x02\x01' or original_lib[18:20] != b'\xb7\0':
+        raise ValueError('Wrong original ELF format/architecture')
+    phoff = struct.unpack_from('<Q', original_lib, 32)[0]
+    phsize, nph = struct.unpack_from('<HH', original_lib, 54)
+    segments = []
+    notes = []
+    for i in range(nph):
+        typ, flags, offset, va, _, size, memsz, _ = struct.unpack_from(
+            '<IIQQQQQQ', original_lib, phoff + i * phsize)
+        if typ == 1:
+            segments.append((va, offset, size, memsz))
+        if typ == 4:
+            notes.append((offset, size))
+    def offset_for(rva):
+        for va, off, size, _ in segments:
+            if va <= rva < va + size:
+                return off + rva - va
+        raise ValueError(f'RVA 0x{rva:x} unmapped in original ELF')
+    build_id = None
+    for off, size in notes:
+        p, end = off, off + size
+        while p + 12 <= end:
+            nl, dl, kind = struct.unpack_from('<III', original_lib, p)
+            p += 12
+            name = original_lib[p:p+nl]
+            p = (p+nl+3)&~3
+            desc = original_lib[p:p+dl]
+            p = (p+dl+3)&~3
+            if name == b'GNU\0' and kind == 3:
+                build_id = desc.hex()
+    if build_id != EXPECTED_BUILD_ID:
+        raise ValueError('Original ELF GNU build ID mismatch')
+    windows = []
+    for label, rva in CODE_RVAS.items():
+        # Non-prologue windows tolerate Frida's own entry trampoline, but
+        # are still exact original signed 4.5.2 executable bytes.
+        at = rva + 32
+        chunk = original_lib[offset_for(at):offset_for(at)+16]
+        windows.append({'site': label, 'rva': at, 'hex': chunk.hex()})
+    expected_preview_opcode = struct.unpack_from('<I', original_lib, offset_for(0x355ca54))[0]
+    if expected_preview_opcode != 0xd10703ff:
+        raise ValueError('Original preview opcode unexpected')
+    span = max(va + memsz for va, _, _, memsz in segments)
+    fingerprint = {
+        'version': '4.5.2.22729281', 'module': 'libgame.so',
+        'sha256_of_original_file_for_offline_audit': EXPECTED_LIBRARY,
+        'build_id': build_id, 'build_id_rva': 0x610, 'mapped_min_size': span,
+        'mapped_max_size': (span+4095)&~4095,
+        'code_windows': windows, 'preview_original_opcode': expected_preview_opcode,
+        'profile_bind_rva': 0x331aaec,
+    }
+    hub_info = {'sha256': HUB_SHA, 'byteLength': len(raw_hub),
+                'source': 'analysis/frontend_offline_static_20261104/module_11d1836.ljbc'}
+    script = (
+        '// Generated by gear/generate_assets.py. Original sources only; never auto-run.\n'
+        'export const ORIGINAL_PROFILE_LUA = Object.freeze(' +
+        json.dumps(originals, separators=(',', ':'), ensure_ascii=True) + ');\n'
+        'export const ORIGINAL_HUB = Object.freeze(' +
+        json.dumps({**hub_info, 'hex': raw_hub.hex()}, separators=(',', ':')) + ');\n'
+        'export const GAME_452_FINGERPRINT = Object.freeze(' +
+        json.dumps(fingerprint, separators=(',', ':')) + ');\n'
+    ).encode('utf8')
+    manifest = {
+        'format': 'gear_v4_original_source_manifest_v1',
+        'game_version': fingerprint['version'],
+        'source_only_mac_static': True,
+        'in_game_execution_verified': False,
+        'native_profile_proof': 'NOT_VERIFIED',
+        'hub_render_proof': 'NOT_VERIFIED',
+        'original_lua': {key: {k:v for k,v in data.items() if k != 'text'}
+                         for key, data in originals.items()},
+        'original_hub': hub_info,
+        'original_library': fingerprint,
+        'generated_asset_sha256': sha(script),
+    }
+    return {
+        'embedded_assets.js': script,
+        'embedded_manifest.json': (json.dumps(manifest, indent=2, sort_keys=True)+'\n').encode(),
+    }
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument('--verify', action='store_true')
+    opts = ap.parse_args()
+    for name, content in outputs().items():
+        path = HERE / name
+        if opts.verify:
+            if not path.exists() or path.read_bytes() != content:
+                raise SystemExit('Embedded asset mismatch: ' + name)
+        else:
+            path.write_bytes(content)
+        print(name, len(content), sha(content))
+    print('VERIFIED source bytes without native activity' if opts.verify else
+          'GENERATED source-only embedded JS and manifest')
+
+
+if __name__ == '__main__':
+    main()

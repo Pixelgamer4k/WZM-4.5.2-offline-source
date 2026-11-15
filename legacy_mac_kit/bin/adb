@@ -1,0 +1,12 @@
+#!/usr/bin/env python3
+"""ADB adapter: replace the neutral placeholder device ID with WZM_DEVICE."""
+import os,sys
+real=os.environ.get('WZM_REAL_ADB')
+target=os.environ.get('WZM_DEVICE')
+if not real or not target:
+    print('Configure WZM_DEVICE and WZM_REAL_ADB using ./run.sh first.',file=sys.stderr)
+    raise SystemExit(2)
+if os.path.abspath(real)==os.path.abspath(__file__):
+    raise SystemExit('Recursive ADB wrapper refused.')
+args=[target if arg=='127.0.0.1:5555' else arg for arg in sys.argv[1:]]
+os.execv(real,[real]+args)

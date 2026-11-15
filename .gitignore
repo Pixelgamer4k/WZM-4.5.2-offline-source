@@ -1,0 +1,18 @@
+# Never commit game files, keys or build outputs
+*.apk
+*.apks
+*.so
+*.dex
+*.ff
+*.xpak
+*.p12
+*.jks
+*password*
+signing/
+out/
+input/
+node_modules/
+__pycache__/
+*.pyc
+*.log
+*.logcat

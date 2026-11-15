@@ -1,0 +1,1976 @@
+{
+  "format": "source-only SHA-256 manifest",
+  "note": "The manifest excludes itself to avoid recursion. Relative paths only.",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 205,
+      "sha256": "d8cf50ca058ae788f0b2527b3903c770e9546c2a5e6ed0d6f85f48e6cff731d2"
+    },
+    {
+      "path": "DEVICE_SETUP.md",
+      "bytes": 6229,
+      "sha256": "9f6ffcc92dd56b7c7a8e05cc2b246a45af684ea2f90ec7baf2097a9f89f97691"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7148,
+      "sha256": "fcb94a04f3a39a0578d41939a64d2a9e0a04de9b48f7af4c090f57fe738d6b09"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/aa_state.lua",
+      "bytes": 481,
+      "sha256": "ab80374b84bb13afcdbf1d444f6c7cf501e349343172352865ef0e601e117fdb"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/aa_step1.lua",
+      "bytes": 647,
+      "sha256": "7699236b76b260a8085dc2d83ff83cb1322d3dbf8d8ada70bc5eaddf4aa134c2"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/activity_lifecycle_probe.bundle.js",
+      "bytes": 466269,
+      "sha256": "19a7939d086ea0ae8ad253d94455bdc626c6d5697e581f8fef96b8d6dd4dda2a"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/activity_lifecycle_probe.js",
+      "bytes": 2383,
+      "sha256": "f16775381724d3a88612c99e552a277bf58a86db042a9537a31b6ef548b34e93"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/add_more_native_ai.js",
+      "bytes": 5304,
+      "sha256": "b93dbec8848877dd5c2c8afe4faac1ee11c2a43e8ee5f4a10a34e93caa0e87e3"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/add_one_bot.lua",
+      "bytes": 442,
+      "sha256": "f2b6e89b8cd436f82f721272f5ff2558fea669bd038bf4479e47c3fab499a3e9"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/addr.lua",
+      "bytes": 300,
+      "sha256": "8aa9e4d9c829ff60f480fcba61e538e5fa4e6bfad276938ed06bf711dc11551e"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/advance.js",
+      "bytes": 1932,
+      "sha256": "a9b2245406cee414425f50eada68e2b4ee1d036c4e5a322400546f845b11f3a6"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/advance.py",
+      "bytes": 1050,
+      "sha256": "56468e9e5a79adcb6947c0c45bf6cb04d8aae32169d4036968b0a6bacf130d23"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/aim_switches.js",
+      "bytes": 1837,
+      "sha256": "22f49411438311cd72f81bbb37da5c98ad6ffe1da8abb9da23d29a15c14de1b0"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/aim_weapons.js",
+      "bytes": 3144,
+      "sha256": "c1a35a32bc299a64f26e92ede1f82577355238f2348762329677b77e4e0c945c"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/attachment_engine_binding.lua",
+      "bytes": 346,
+      "sha256": "338d06aef89cffd59023b488f4a19d5c14e133081f8a37869c4f4fd0325d8235"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/attachment_inspect_readonly.lua",
+      "bytes": 571,
+      "sha256": "5d1514c3f0e0c13d02a10e62c0450f102cd21e43822afd9db29e6fe7859e239b"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/attachment_query_readonly.lua",
+      "bytes": 447,
+      "sha256": "3719ebd364a018dbd9e6a4d1881f07de160f74c4f9185c1e526532bb176b79b8"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/binder_probe.py",
+      "bytes": 2034,
+      "sha256": "dbd0e2d529423c6deae75c3b347f72c74b474b974b7f7cd36939445651308fb7"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/block_after_enter.sh",
+      "bytes": 401,
+      "sha256": "707bd003aa91cb291eb9802f6587c83f6bebcec385cd32f6f3d949ab5a298089"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/blur_enable.js",
+      "bytes": 1009,
+      "sha256": "b1226cab9aac61f48212fcf7081335024d5b3481c00309a56261b40440ac39b2"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/blur_find.js",
+      "bytes": 2921,
+      "sha256": "998c4fdc5bc7fb0fdb53499f3191924b870bc55cba309463bd5dc34748c50ca7"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/blur_find_fast.js",
+      "bytes": 2382,
+      "sha256": "892873033aae8446db3beafcf54f2b4732b6bfe493c51f8b63310f9280912423"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/blur_probe.py",
+      "bytes": 942,
+      "sha256": "36a06265a9c1321d1b053566016568483463712865b5d2f9cc90707a3586bb28"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/blur_scan.js",
+      "bytes": 1248,
+      "sha256": "867a6c9149573c87188fbc3ad473d4d6dab9c4faaca1fd9914ee619368e4d3da"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/blur_state_readonly.py",
+      "bytes": 697,
+      "sha256": "72fec35238668f305ea96f190602194eb3fb1981ff322b572211e8b64d619725"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/blur_xref.js",
+      "bytes": 1628,
+      "sha256": "c3ea4b37cb547da4a5c07049b0ee9f676433b088a4d9b60e0729ba7f78b7a140"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/boot_gvs_offline.py",
+      "bytes": 1436,
+      "sha256": "1f1accc04488d7e01b103b8af28b3370e801249742dafa71cfb7b679eb132fe6"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/boot_offline.sh",
+      "bytes": 1576,
+      "sha256": "194718c270cbbbc2df9e3861a4b8a9b45812751a36a6e4bd776078e037902c62"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/boot_ready.py",
+      "bytes": 2031,
+      "sha256": "77f9cb8a321743ba4c3f32e005e1ce834471c7ae714bd1892f984ebc927f5c2f"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/bot_appearance_snapshot.py",
+      "bytes": 1299,
+      "sha256": "bccedf5ca735ae8cbf59e950022317ce660c0e81720dfa5ceb72cf2dce4746b0"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/bot_binding_info.lua",
+      "bytes": 219,
+      "sha256": "61f5516e1ef80b3a225782ce1f608c05b4ef88bcc5fdf1ed544c37b4c3444965"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/bot_difficulty_labels_readonly.lua",
+      "bytes": 158,
+      "sha256": "69425c459efc2308268229f46808808ccbb6b9694b74c1be9e7a61f52ede0250"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/bot_ready_watch.py",
+      "bytes": 1782,
+      "sha256": "91005e3016b9ed87225678c1d204f2a1dccafe167e3971bba7d89dd26ab0497d"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/bot_slot_snapshot.py",
+      "bytes": 1881,
+      "sha256": "cafd2c7c10e53cf4cf76a5791f473ebf6fd8ac0e72a93c667095e4ce6a46cc62"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/both_sides_bots.py",
+      "bytes": 3569,
+      "sha256": "d5c43782e118e25fb5ec631052e57734ebeef255e0d388a6f22fc5e198912f24"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/br_creator_trace.js",
+      "bytes": 1683,
+      "sha256": "ae23dc25e6c4c3f950d91e8005a54eb1c6b209f2baf95d2ab4e65c0a7efc6d40"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/camera_overlay_diagnostic.js",
+      "bytes": 11808,
+      "sha256": "098aad9677bfe6944de5b286f6ab5385f6c02e30192a594f49615b379ec8fa43"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/capture_command_registry.py",
+      "bytes": 1844,
+      "sha256": "1dcceb2e8bbbe439c1f91aa47cbcf75efe1bc9f9a00106ab7d56c87327c72628"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/capture_frontend_state.py",
+      "bytes": 4153,
+      "sha256": "0181a0df2b0ea848dad2633f53f8349675bab48b7373bd93daf7d00e3330df75"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/capture_session_native_readonly.py",
+      "bytes": 1214,
+      "sha256": "27e1727dc13fc6ad312d75f93ed86fd945fe490eefbd96fc5bfde7e6a0a49fff"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/cdni_names.py",
+      "bytes": 823,
+      "sha256": "ecea7013401f54688ee2ed57a7db592558cc6035e798bf59b8ec54c96249bbd0"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/cdni_state.py",
+      "bytes": 1706,
+      "sha256": "c87b040bc7e9e0e6b2b3547c531b1c559f31f5ccc326d307f1e3889aa41bf1f9"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/change_team_inspect.lua",
+      "bytes": 245,
+      "sha256": "27b856d02d722204e60b18a670acba379e4f94e073ae21f653def603bde214c3"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/check_unlock_state.lua",
+      "bytes": 165,
+      "sha256": "6c8bc47d308c5f98dca123cf30522d1394826adbfa26ce33285ef20e9d28e0e0"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/cmd.lua",
+      "bytes": 298,
+      "sha256": "f5eddc84dc47685935c5ca14724785c77b9889822f493b3e86032852dcc67395"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/command_registry_readonly.js",
+      "bytes": 2245,
+      "sha256": "52fb3deaf7b0cd907f8fc6700b95759e180aeeacb50ea43b7d3a569669335c44"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/crash2_real_bots.js",
+      "bytes": 7579,
+      "sha256": "0e7eef4741fa1f32a27fda42aab393056814983b0b9aa4d044e75ddd7220422d"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/crash2_real_bots.py",
+      "bytes": 2131,
+      "sha256": "c5615605b82f9762f3c38a7da624f783c9b4081f4e2ca0f5743a9edbe07cd532"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/db_find.py",
+      "bytes": 1205,
+      "sha256": "b2efe0c2a640876adecca8e19db3e5bb0b5cc080697b61b106714d37d2cc3853"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/device_pid.py",
+      "bytes": 1583,
+      "sha256": "8aac72766d14c04ab54e5b365a1dffe7e9ccf97431df7120b155f44c95e578f5"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/dump_loadouts.lua",
+      "bytes": 2041,
+      "sha256": "efd3f83dfd5e469a2060ab4c777b8e249c6f70b08f2b01bb54ef01d12575246a"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/dvar_enum.js",
+      "bytes": 1738,
+      "sha256": "643620bacbdddd8ceef528335a2a7821b7884264f209db3b7c1b4c76263f63c7"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/dvar_lookup.py",
+      "bytes": 1009,
+      "sha256": "7cf88bab322f8f47d6fc180afaf8a58fb8a879ec759ff82946adfb770698fed2"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/editor_loading_probe.lua",
+      "bytes": 899,
+      "sha256": "12dbabe64bc28bf31c06ffe32c225aaaaa666f4918311fbd3cab72a1d9903b73"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/editor_preview_events.lua",
+      "bytes": 109,
+      "sha256": "b2393e2b2a3400929296962b519268974de08fe569c9eb0808a1d69dcd32a182"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/exit_block.js",
+      "bytes": 1063,
+      "sha256": "945a341d9a61c6d867e7189a639092bc3a865323802d83c3c559d54f72323e9c"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/fake_player_data.lua",
+      "bytes": 443,
+      "sha256": "7609e213fb86d9baa229c39ae67edc0cb0d71070cf535795759fb0c2e4105706"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/fake_player_data.py",
+      "bytes": 2162,
+      "sha256": "4917a6f6ad81385d950c501b323794ac03b516b265b778bd3d8af14898e820c9"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/fence_pass_override.lua",
+      "bytes": 931,
+      "sha256": "6e862099b1904ebcab795ead978b5e5a8e0199e80b1595e8b4c6583d9c81d956"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/file_trace.js",
+      "bytes": 4039,
+      "sha256": "0e717767b2eff56ba1179ff8b0a607a7ab05bd349d252d2fe102e1df2ad9a450"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/find_func.lua",
+      "bytes": 706,
+      "sha256": "4f322e2cecbb07a14e73381f2e15f33397bc5dffcfdf783cc1d9d38eadf1b20d"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/finish_path_probe.bundle.js",
+      "bytes": 754810,
+      "sha256": "b05d1717b572fe4671013187e4cea354da8c209f13eb445d124b70fb3a85bd51"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/finish_path_probe.js",
+      "bytes": 2746,
+      "sha256": "03e43cad64522330c94dadf683363097002bdb0a83d26ad0e4f9e97ce0574da9"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/follow_real_enemy.py",
+      "bytes": 3065,
+      "sha256": "151331b2396e73a2077f75c6fe261c3215c45fd00b2dc3e840ddd2a4e7f2859c"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/fps_cap_probe.js",
+      "bytes": 2146,
+      "sha256": "463f8fdfb35d76d8a992e2bb0ce0947b907739e4e372153b7c9e27b532aeba9c"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/fps_pct_sweep.py",
+      "bytes": 2806,
+      "sha256": "1f75c995bb2d64c3950f6d221ab2ce1db91f5c56648b1a7f1beac522b2b3cb33"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/fps_probe_run.py",
+      "bytes": 1366,
+      "sha256": "0e9a7736189c4064a97455694418f0dec9befd468f57004a4e6c8b9e60ae63e7"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/fps_sweep.py",
+      "bytes": 2790,
+      "sha256": "4d8bb02af1330633910dc6d2e64350f747d66eadcd46654a851a72d28de110f3"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/frame_profiler.py",
+      "bytes": 2512,
+      "sha256": "8068adb673914bd84ed1d05b42cb422760b8f79390490b52f081ee77c1c09c5e"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/frontend_actions_probe.lua",
+      "bytes": 1227,
+      "sha256": "6657d3aa32b096eff1ab932b0410ef00b226bb1fc867a99d7f3a0a909e4ca3e1"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/frontend_commands_probe.lua",
+      "bytes": 1102,
+      "sha256": "baec238650617311c21bbadb29b57905e7332dd1e6ebf39b61e1e0fc619dfaee"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/frontend_ddl_probe.lua",
+      "bytes": 732,
+      "sha256": "fdc2e8f6049a16eed7e73b65ef3a8204587c91ad33bbaf3015e65fc1c3204d59"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/frontend_dump_gear.lua",
+      "bytes": 1003,
+      "sha256": "a45dccfdce04260862fa224bd3145d2713a03a6a71e22646b151ceb0d6ad35fc"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/frontend_fence_probe.lua",
+      "bytes": 902,
+      "sha256": "fe0c52a74c3cf814f540da7bba687a8f0161746343e4c7c83d80b6f56eb15439"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/frontend_hub_build_probe.lua",
+      "bytes": 377,
+      "sha256": "0112f846444f0cff675f627f90dc05324322d08e9de6554178780102de480efc"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/frontend_hub_diagnostic_async.lua",
+      "bytes": 896,
+      "sha256": "0fadb79c929d09387f802784f5f2f360e026ec68db94f07de23bd08c934237f7"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/frontend_hub_diagnostic_open.lua",
+      "bytes": 893,
+      "sha256": "4e864b3d3149835d07252ebc45e14b5124c5f02a684e81496329a270397ab735"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/frontend_hub_diagnostic_restore.lua",
+      "bytes": 127,
+      "sha256": "f57aa0ecab768e230cdd6128aee9d0a38fc572cc18482006d5c47f60251fbb91"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/frontend_hub_error_binding.lua",
+      "bytes": 246,
+      "sha256": "c210aae45269624570c303cbb370888f4c8017b959a81b70a7f3223557d601d0"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/frontend_navigation_probe.lua",
+      "bytes": 1138,
+      "sha256": "bb96e7f34ace7f609e84e42f17e644ccc00a051cd5a4e561cf28bbefa58c6bdd"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/frontend_open_gearup.lua",
+      "bytes": 691,
+      "sha256": "5623785800b3f09d8b6b65fba705f36517ed317b8f3134e7f75b7693ca21e24c"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/frontend_preview_guard.js",
+      "bytes": 1440,
+      "sha256": "d31e1c848097a9e9fb7964c854aaedce75834bd0784862f9e45e6192049e2c34"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/frontend_profile_leaf_readonly.lua",
+      "bytes": 3445,
+      "sha256": "376897da0bba4ed4266e7035a373bae114302451075e65594a39034d7c4c6302"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/frontend_register_weapon.py",
+      "bytes": 1871,
+      "sha256": "e41fe11e418691158f17a6ed45380ba62b7aa10c140d0f339864ac234b571003"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/frontend_request_weapons.lua",
+      "bytes": 467,
+      "sha256": "0c418e62e6c11e08b3f10d57b212396d041b0723735c9f51abf7665cebbb0c93"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/frontend_state.lua",
+      "bytes": 1677,
+      "sha256": "27e1df70af03ea48b9c2e479e08e938f52d0eb8509af5668bc99f8a2af299ea8"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/frontend_trace.lua",
+      "bytes": 810,
+      "sha256": "c5db95e936b277f777fad6eaee70c92da5dd6a15bbc7fd7709bf873d97084dca"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/frontend_weapon_catalog.py",
+      "bytes": 2593,
+      "sha256": "c3f8940c3c183cc04532922e361fc6994e22029a276892d5ce44cec13360849a"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/frontend_weapon_init_once.py",
+      "bytes": 1332,
+      "sha256": "e7c4abde969093fef2d8c257e13e92fa8f22008e837865b3f517174718904906"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/frontend_weapon_sources_readonly.py",
+      "bytes": 1133,
+      "sha256": "4f76b317dd7146019773f5edeb5bd3bcad526ccccd7296529238574459ffa38c"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/ftue_bindings_snapshot.lua",
+      "bytes": 904,
+      "sha256": "adcc073708129bac98a42975ce1dae2cad89be3fb428b392b804caf04dce9f8f"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/gametype_list.py",
+      "bytes": 1367,
+      "sha256": "0a75d2bab33fee7fbb9cf4fa9c3e4583f5c65a2a7b02f65c985c804a50dc5ea7"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/gametype_table.py",
+      "bytes": 1957,
+      "sha256": "141af99038747cf7560b44d6224ce04a9933da62d29624c8bba1fdbc0c36da7f"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/gate.js",
+      "bytes": 934,
+      "sha256": "019e9d4bbc5620292bc4d59e96ed4fa7d00e38278087ea7d791a92c0dd1bb47c"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/gate.py",
+      "bytes": 927,
+      "sha256": "57faa383c19492813628fa58de0793d3adbefbb32053120f15bc53aa9b5d9066"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/gate2.js",
+      "bytes": 562,
+      "sha256": "37d93defe484ab6c4bedf140d367bc21659912c5bfda03bafb790642e7e9a5ca"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/gfx_720_trial.js",
+      "bytes": 2178,
+      "sha256": "13ce5363407ecd068fefa136fd9845fd27532d437866f7032cec6684799c1722"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/gfx_apply.js",
+      "bytes": 4990,
+      "sha256": "d929391ebe7ad60bb5e0feb3f09b051c69d300c72aa1e34734767cf55b2bd0a9"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/gfx_ctl.py",
+      "bytes": 646,
+      "sha256": "05ed3f349a294c44a8bd3c281a3509670637d84cd0d3dc89916108503f0f2c08"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/gfx_drstable_readonly.js",
+      "bytes": 677,
+      "sha256": "4ca9c51a2904d646cc3ea5c387990c3e5dcf6df9cc9d6285cdf87fe1ebba6d52"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/gfx_dump.lua",
+      "bytes": 557,
+      "sha256": "a998aa7cde8adbb4d439c00dca6500f0e73f3a7be76743abd83d3c2c3e5d2970"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/gfx_early.js",
+      "bytes": 1102,
+      "sha256": "88f38d427801a19694b8b1ecb93b8e81c99d6961c265e8a8acaea4893ee65880"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/gfx_early.py",
+      "bytes": 1472,
+      "sha256": "1ec4e892b59748015e5531378ef85a00c4c1a22c59694b2be33b8f96e2c9e24d"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/gfx_fixed720.sh",
+      "bytes": 224,
+      "sha256": "4bb931ee0c2625df19bd8841a0ab4c77b2d3eb3094f63971a8cd0e4ce752b5eb"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/gfx_fixed720_live.js",
+      "bytes": 2489,
+      "sha256": "b7281fc5fb8f658c0e2372643a09ae81eed5a7dec1e12f514a76d88040e6e0fb"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/gfx_fixed720_live.py",
+      "bytes": 2358,
+      "sha256": "806f0b20a359bb033312b81aa333d55d0161791c4f8a1630d442e5211ec1d653"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/gfx_fixed720_pct87_trial.js",
+      "bytes": 2178,
+      "sha256": "7d2542e01d7aeb14d2f5d14dad6f982c5bb1c0c3285d06b921395ca8768c306d"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/gfx_fixed720_trial.js",
+      "bytes": 2386,
+      "sha256": "383cf4ced19bde1966cebebacaabb80ab8bd50ba100f09592e122f8ff0c4c074"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/gfx_fixed720_verify.js",
+      "bytes": 1646,
+      "sha256": "d09b2fbd0667272cdc1352072c761cef2f52c1f252b5cbb24802f2b7b4633497"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/gfx_fixed_640_native.js",
+      "bytes": 1962,
+      "sha256": "e2023333c5a45441081aecd9085377b417eddccbd9ad666d1f4543931708a6d5"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/gfx_measure.js",
+      "bytes": 710,
+      "sha256": "9a2fdc4f098775d53abb1c889e7d34e94186a1d55695758c590a854b06e49151"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/gfx_min.js",
+      "bytes": 1465,
+      "sha256": "da6c60ae9f5805c775e808bac35bdb70f9a148757b8ded1d9a1271857b2cd1a9"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/gfx_pass_classify.js",
+      "bytes": 959,
+      "sha256": "6af7c3a81727381cdf035e60e128824300e2fb2f14e404e84623b1ef0540e4a4"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/gfx_probe.lua",
+      "bytes": 1462,
+      "sha256": "42fb2e60eec28cc0417dcc21ea0c5023a4eec4354d21da11830f7ef4e7f32a44"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/gfx_set.js",
+      "bytes": 1213,
+      "sha256": "49c0ef144eb433522b29db6a35b082f38ada06a78ecd94fb118622f8b6cc1b59"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/gfx_sizing_native_probe.js",
+      "bytes": 1190,
+      "sha256": "12e1e67f9513baf5806e4566fa856edd5c3cd0e0615789bba214523ac7164c34"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/hash_scan.py",
+      "bytes": 1882,
+      "sha256": "8b92c9a120fd4887d4de2997402b4595b306d3c07c234df944a98f3157aaad7c"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/hitmarker_bind_state.lua",
+      "bytes": 478,
+      "sha256": "54fb1a6e729b98567a8e0fd09f45133f5046fa4b7c3ce331c83db9b7edbad4a1"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/hitmarker_scale_bind.lua",
+      "bytes": 949,
+      "sha256": "46de08d6297bc218be5bdac7e3063cd541f3184d369bfa5b0c911503adc79ee4"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/hitmarker_scale_state.lua",
+      "bytes": 615,
+      "sha256": "a4f9cd0db1d00f92029d3f1a99838503e3634c5cd8c320c997c266478b268741"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/host.lua",
+      "bytes": 320,
+      "sha256": "8af30e915745dfdeda6e6a663ec6341e3650db583ff29af09323dc017a33c8f8"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/host_from_live_menu.sh",
+      "bytes": 1381,
+      "sha256": "53d89707550cda3334bb000429e2bd36f2879aedefe8b4ccd5b8953ff802e52b"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/host_spawn.js",
+      "bytes": 109965,
+      "sha256": "cab61ad012edfd814f17c25866b26cc9a77fe221320f873ccee315acde58519d"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/host_spawn.py",
+      "bytes": 23427,
+      "sha256": "85155140d51b008c1f8a212dca260c94932f90589c07c51191bc6aaae9b8b16e"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/inject_sierra_bc3.json",
+      "bytes": 2152,
+      "sha256": "f3a8257eb5bd56e1bf285cdacdfc8b3439353e1eb5534ef789d9927880803526"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/java_block_close.js",
+      "bytes": 752318,
+      "sha256": "c677167feb20dad108668717bf76042144032317292fa16064f09fada1f3e26b"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/java_block_close_src.js",
+      "bytes": 1154,
+      "sha256": "c1f7aa6bf15e856a7737471af3eb25eb9d76fbfd514510ab7aad76fc84d69740"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/java_close_origin.js",
+      "bytes": 756650,
+      "sha256": "00e242c85f30ca6d6f8a7df8557f3ad8dec9ad47c6669e8b335a3746671f2557"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/java_close_origin_src.js",
+      "bytes": 3445,
+      "sha256": "810f3273089d60439a27cfeceff464a5f95a8b8fde7f524ea779e62228b9ae2d"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/java_probe_readonly.js",
+      "bytes": 206,
+      "sha256": "ea3f67530549ab7cf1cbbb86c2d1014d64995e896832407493842f19b9ec1a1d"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/java_watch.py",
+      "bytes": 1128,
+      "sha256": "fc209bea77b529a38452b85dcbe47ca5bc71378019ff699480bd91b4c147e4ef"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/java_watch_agent.js",
+      "bytes": 752139,
+      "sha256": "a113cc505230b67041e3118d26d75323dbe5bfcaf4b32f7b4b34473190390966"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/java_watch_agent_bt.js",
+      "bytes": 755483,
+      "sha256": "4eaf757f52a7932cc1483afab1a48b3f6ff3fc5d4e5396828796acaa384ffc2a"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/java_watch_agent_src.js",
+      "bytes": 2725,
+      "sha256": "e7f87b33d59beaa725ef5fb4d6e444f5b85cfc3507d56bea96ff4b69b561853f"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/js_once.py",
+      "bytes": 514,
+      "sha256": "a6c3960cf234bb73f72a468e606e65b3816d987a41faaaad3be8b6d23d3c7417"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/level.js",
+      "bytes": 1935,
+      "sha256": "5e946588ed258f50bcbc1744dc7c6af07f983051baadc1eb0f082647a317f514"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/level.py",
+      "bytes": 1325,
+      "sha256": "977fc93e421717ab3a8ce822ece67190be3efa02941a82e39e38f92a6ee1bcbd"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/loc_hash.py",
+      "bytes": 1501,
+      "sha256": "50887fe57ebd26a2427deb43f9c18c871cfe487d20ebd72322794236159793c7"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/loot_catalog_api_probe.lua",
+      "bytes": 1313,
+      "sha256": "dbf93797e85b8071f7194a3de6e2d7687b23ef75e783dfd8a1f1ab7caec3be79"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/loot_catalog_identity_probe.lua",
+      "bytes": 522,
+      "sha256": "3c4113e7f9dc2b49668568cb6ff987adc8aa4e61631934e81cadfa8162d95637"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/lua_exec.js",
+      "bytes": 1322,
+      "sha256": "61caf285cabe6926b6ddc68f3ab0cb1ac59c72d7b440f07475101fa7259c73cf"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/lua_exec.py",
+      "bytes": 1224,
+      "sha256": "00166673c798739c16ed08c6a9fd25c8931678b90246ac83afb6bf6515e4e2e2"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/lui_send.js",
+      "bytes": 3201,
+      "sha256": "e6eb1ace81fd82cd98514b0d59b13bd655a46380f572b7fb97c27a21323259f5"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/luistartup_conds.lua",
+      "bytes": 888,
+      "sha256": "27f73d48a835390105bb305b688f533d205dba63671947336208cde828c141ac"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/map_loader_observer_readonly.js",
+      "bytes": 3208,
+      "sha256": "e3eb55200790a04f9774bb578b8d97e8a023c9fac6ed365a0216f0bc38b25b81"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/map_transition.js",
+      "bytes": 5889,
+      "sha256": "0ba662eef91c24b7d472ae910c204259f5cb3bbfaec73696b49b88b2c8bb744b"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/map_transition.py",
+      "bytes": 1781,
+      "sha256": "36f6c7fe9947df8ef02a77d992866feb9f4fd00112c40441152e922ca50284b6"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/match_change_team.lua",
+      "bytes": 835,
+      "sha256": "03d8dcc3e7ae230926640b90f1e7de7655f967babaad948022f22f5110a3e36b"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/match_entry_arm.js",
+      "bytes": 8236,
+      "sha256": "44f2a13eecac5f5ca87f09cede18d6e4ac1bd237d645aa4656dfa25a577fae9e"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/match_entry_arm.py",
+      "bytes": 1109,
+      "sha256": "979e46d6bd177000d0c1b2a09b59ffcfa32920221afe0e7aadacf23755c5bb35"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/match_entry_probe.js",
+      "bytes": 1080,
+      "sha256": "55f740b5214ed784444cacbb1516fd4eea59b5c7ddc59a94398a7dad40fdcd25"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/match_entry_probe.py",
+      "bytes": 898,
+      "sha256": "89f6952f83396b12ceb5f5b45a327e321f93cbe9a1e5cc306cebfcf5328de2b8"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/match_from_menu.sh",
+      "bytes": 1372,
+      "sha256": "65e58bd3545014f71961c06b996f56221be1daa6b6ff0ff7642cc328e9aec859"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/match_join_discover.lua",
+      "bytes": 1647,
+      "sha256": "4b327dc6775497553ef428c7924124aa74b545557d32ce41942d527d816a9722"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/match_libs_probe.lua",
+      "bytes": 1196,
+      "sha256": "f5f9b6b8e3a1cd6d67633eba537dcf810ffd98876f9dadf87d205e52862463cc"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/match_open_team_menu.lua",
+      "bytes": 236,
+      "sha256": "357805a8e734276fae43e6a6b3c761bcbd1cecb2b78a0281b08ce25b1eb9e5d3"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/match_state_probe.lua",
+      "bytes": 1229,
+      "sha256": "a613380df2c1f8c93a869e056748b5629f3c074c40ae54c769c2670d27ab09df"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/mb_run.py",
+      "bytes": 671,
+      "sha256": "090b43805b270a46f5427ac9558e5e1dfb2312cd6f4bb844aec6253b5a3a5ef6"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/mblur_drive.js",
+      "bytes": 2329,
+      "sha256": "242f3bbb87be64d02447f6dc43ae3d6b1ad876431a4799d105ebf860cc7d71c7"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/mblur_probe.js",
+      "bytes": 947,
+      "sha256": "3eebc63ddf2ba47a7a36af5af24f750c2c9e3c8d467c1accdd4267a4652e7199"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/mbvk.js",
+      "bytes": 20026,
+      "sha256": "70084b58a1390e4f32ba5a3481dddfa47a144b8fc5f100760f14aa6808f9c4bf"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/mbvk_attach.py",
+      "bytes": 761,
+      "sha256": "812697978758c22cc6dfba16c58f6d30d97eba827ac11a4cb0b5130277fa02fb"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/mbvk_early.js",
+      "bytes": 1614,
+      "sha256": "4a93141c53beea6d8985596b9113afddf9bd8562109faccec335d8abb18f1c68"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/mbvk_early.py",
+      "bytes": 1475,
+      "sha256": "c05d734a6cd49778840f874dfafc2ef92f4d98a5a6f202e1928513e0fce9a9ec"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/mbvk_run.py",
+      "bytes": 1551,
+      "sha256": "87e6b901c7db70c64f6eb2dbbd74103ec52a24148ec09caa001193c3818576de"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/mem.py",
+      "bytes": 1007,
+      "sha256": "1577ca96db86bd2c6e481c663e0181c050700bface8a1f3e805ab675540e8d76"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/mem_peek.py",
+      "bytes": 1686,
+      "sha256": "28a68ce9d680458ca0b95f32cdb5a177783c5c4060aaf03654d5c3c21706bd24"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/mem_string_search.py",
+      "bytes": 1794,
+      "sha256": "12f3dda6fe32cf97ec460832dc811d68732f18fb4999d85b5ece9b259eaecbe4"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/menu.sh",
+      "bytes": 1364,
+      "sha256": "a0f986730ee29418f9c96d9f17f4e7b152b27353e7eacc3c3db7011fa24d2033"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/menu_keeper.sh",
+      "bytes": 1486,
+      "sha256": "496d65b39239b4942cc4115711001bd807b3c66315b9e770b10a7206efeb2dd4"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/menu_rematch_bots.py",
+      "bytes": 6148,
+      "sha256": "f44fe8a5a9e0f4c0d2863c5483c247f52e942bd786ee8793f2d2ebeb1c8eb8e2"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/menu_return_watch.py",
+      "bytes": 3828,
+      "sha256": "17b8d47be31c662f429d0966a291851252a2fa213ce2b72a06b012dc734b20c2"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/menu_try.sh",
+      "bytes": 546,
+      "sha256": "d7072e3249e5a9e97e2df27a337226343b3d753453cc4e60005b0283691f16aa"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/mode_minimal.js",
+      "bytes": 2294,
+      "sha256": "821bfda68ecb867522c875ae71035034443a1af2b8d63b6ee177d5599ff0ee85"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/mode_minimal.py",
+      "bytes": 1069,
+      "sha256": "c20a7d07bd410382d81beb446430117bf614933ee8a5ee417d6e04b6b4c20aaf"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/mode_request.py",
+      "bytes": 3458,
+      "sha256": "e86c0057c0355838832d706be915d74e8bcaebba5e4b24ac72dae9a7db9a4bf6"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/motion_blur_registry_readonly.py",
+      "bytes": 1355,
+      "sha256": "c22c31a9bb264e8e349e1f57d75ec6fdf79e1600ee48dd0fbc67ee776e970aa0"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/native_ai_all_veteran.js",
+      "bytes": 3468,
+      "sha256": "447c7fdee87cee0c267d934c2e819f83ecb8046d9454fe86cfd23953675d162f"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/native_ai_bot_trial.js",
+      "bytes": 3735,
+      "sha256": "b01989b5de8d0cd0f2a59730377e14f2bc31ebd70515cec6f2d7d84d585066e2"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/native_ai_both_sides.js",
+      "bytes": 5996,
+      "sha256": "c27fc54c334cc17c450a71d1eeea4abf432c40c28bf534407ca26cd402ff2c40"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/native_ai_difficulty_trial.js",
+      "bytes": 3175,
+      "sha256": "c9f167c7734e8aa1844284e3352c12c625c9a7ddf66a7df9b88131d4f614f90b"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/native_ai_roster_trial.js",
+      "bytes": 10690,
+      "sha256": "d881f93e4ad8dbe76024f5a5e6ed9837811f07d32766cc45d2b44d41188d34ec"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/native_ai_roster_watch.py",
+      "bytes": 3895,
+      "sha256": "710763aff4f047eb131ec41930f790adac8f2e04dc5236fa573bdd3a8bdc014f"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/native_ai_veteran_guard.js",
+      "bytes": 3924,
+      "sha256": "b63c44c77f03041f661046f95610b4022d3c71fbac8aced6ab7e8b3a2b3a2225"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/native_bot_connect_once.js",
+      "bytes": 1852,
+      "sha256": "c03df0e848a3a0fc3e98535419529f83953f8597fe988d54211a2ce57720d9c1"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/native_bot_connection_trace.js",
+      "bytes": 3356,
+      "sha256": "b6fb50812cfc01a2c56d7fa6998438f3d32bffc6177e183da9657a2f115e63a3"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/native_bot_once.js",
+      "bytes": 1348,
+      "sha256": "31150ea5fc1a6124360c3d4951d9b64ae704d7d7a0f1f416503c4b90ac325ffd"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/native_bot_stalk.js",
+      "bytes": 2871,
+      "sha256": "74f073d91e2045dd5eb84406e7cf41205981c7b510ca4f14513e98b44e8430a9"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/observer_occupant.py",
+      "bytes": 2916,
+      "sha256": "060058a1b2422b307276ac7379c67210b23ec085a11a7132d76780acc9fc3f3e"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/observer_occupant_trial.js",
+      "bytes": 4792,
+      "sha256": "37bfff8df5c88f11a26b1553c06edcd4a922371fab11d89f108aeed61ec112cf"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/offline_client_fence.lua",
+      "bytes": 763,
+      "sha256": "5147f57a00cfed42ced0e033ec7868143713c2ab6cff7a32b51c0bd48c850a3e"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/offline_editor_preview.lua",
+      "bytes": 1340,
+      "sha256": "9380c448cc4af50717d7a603426d6027efcbb4d16505b157a9cf707c746781fb"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/offline_frontend.lua",
+      "bytes": 1385,
+      "sha256": "0430ecb2d48ff3a1f46fe7ec5a42b1348fab7d55b47f631b1ee85c50e42cbdd2"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/offline_gvs.js",
+      "bytes": 1080,
+      "sha256": "d2a81b41916112015c27bb0bc61eb4957b5f033f329d4acc18c6c378f7d9750d"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/offline_seed_weapon_test.lua",
+      "bytes": 1659,
+      "sha256": "6e87a0fef6cbbda4a756e3798a298f6d094ccb23b7847dec45cd4f76baee0810"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/offline_unlocks.lua",
+      "bytes": 1887,
+      "sha256": "b1c93c22f5cf454be51a67fd0d25b29709db374c27a46062175ab131bda00600"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/offline_unlocks_ext.lua",
+      "bytes": 1371,
+      "sha256": "a878936edb69869b2108f83722b5c84d6af74f66e77a0195748c15c14231fa63"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/offline_unlocks_level.lua",
+      "bytes": 762,
+      "sha256": "29c509ec22043a9d4f73bd0b3b80dc1478b6f654509f63ab26e90c3d4736c7c6"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/open_gear_up.lua",
+      "bytes": 701,
+      "sha256": "ca72a950c81a63906ebf7833490cabebeafcab675c394aea76b043884e75de9f"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/p10_skip.lua",
+      "bytes": 253,
+      "sha256": "772b9ee585b3b58d6946ef83370ba88480234fbec33ae25401d3a34ffef89527"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/p11_status.lua",
+      "bytes": 451,
+      "sha256": "4e83f8e83f2a9ebfb649fe4e97a6753ff4803399a012656b18569c9e11d8cbc3"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/p12_after.lua",
+      "bytes": 639,
+      "sha256": "5de99d4a4b6e7b27d86e70316173875e6d4802c9ba481413a26d750da60ed229"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/p13_status.lua",
+      "bytes": 555,
+      "sha256": "8ad73c552909bc96847fe74c3ffa750c81025f51a0d658bf41c7fab25e535b19"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/p14_top.lua",
+      "bytes": 544,
+      "sha256": "6adef3e809dcd84d199de862daafe5634927a127ab338cb47d6ce0fbc015bd5f"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/p15_close.lua",
+      "bytes": 384,
+      "sha256": "35c4eb667130440221d18a60aa00d0a0833bf23bd59c565386e57e6f15ff5e15"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/p16_cdni.lua",
+      "bytes": 763,
+      "sha256": "5dba9fef2d4f60c2dd03d097b4a27c616344b0cffbc0f321a41d7f0b7fafd157"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/p17_packs.lua",
+      "bytes": 830,
+      "sha256": "51ec3541e20cfb13a204b235ff88a31021a3cb0607af30dc658532a492b7250e"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/p18_scene.lua",
+      "bytes": 455,
+      "sha256": "899a91a1a8e276e8d39b59bee59b5870beeb9f1084c7e53b254036dbec4cd9f0"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/p19_scene.lua",
+      "bytes": 516,
+      "sha256": "f50f4873535afbaae1aac335abc0aa0daed3af0a95ae878131fe41a3b55cd8ee"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/p20_maps.lua",
+      "bytes": 190,
+      "sha256": "709b88273f7f3c5bd7b26f5a8f4f08524733a1ca43c852c816b1fdcb1fd22d74"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/p21_scene_test.lua",
+      "bytes": 744,
+      "sha256": "efed05bcd884360a3bc75ab5c64a1da6a5c3af678dc0ae30f395ce1b8ff847d6"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/p22_tree.lua",
+      "bytes": 990,
+      "sha256": "546df4ce6ca6e6cb4f1d10ce8099f28080890a9e53c09191810a7e0ac20270de"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/p23_panel.lua",
+      "bytes": 1133,
+      "sha256": "797ea3d6bbc08f3fbd54b2713adfb128c853aba3dc15f5ea7f46b8b67050280c"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/p24_ds.lua",
+      "bytes": 811,
+      "sha256": "577c4d427ad986f96d7e282d8eca053922ee6751e2d818b5b4ac9c93d1eab097"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/p25_ds.lua",
+      "bytes": 1049,
+      "sha256": "26fe80772fb0502c026064d68e2ebce5753d64a30234204f49c8a7bca3ef625d"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/p26.lua",
+      "bytes": 1091,
+      "sha256": "3ad0c4a28ef86f341bacb54db68139eaebc04e7dcf83d8c227b210e26a2aa072"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/p27.lua",
+      "bytes": 650,
+      "sha256": "3ea3fdc57a74d3aa0c974ad42e695f165d43115f87afc8057d2e639cf93dcbe0"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/p28_exec.lua",
+      "bytes": 613,
+      "sha256": "b9f5d95d6f5c0ade3ff1b551d1e2e1fb22e90af04639a38eb3dcb19e518657da"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/p29.lua",
+      "bytes": 435,
+      "sha256": "4cda79360fd7c5b85afec167dda97785706fcf5bf6d49ef449986f0d548901d2"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/p2_state.lua",
+      "bytes": 1246,
+      "sha256": "070155a200537a7b024457beb3d8b6749997114fad84bb907f884aefd6dec1a4"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/p30.lua",
+      "bytes": 507,
+      "sha256": "4de31efc6401fbc21483fdd9411a008bcef71ed2bb882858982f539d25d3196b"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/p31_keys.lua",
+      "bytes": 311,
+      "sha256": "847a60d1d8260d1f5be9e7dadb4ebebb17227f48b4ab259090913cb9d2db7add"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/p3_fence.lua",
+      "bytes": 891,
+      "sha256": "2f61530bebfbc317fbf2179cfb9beba8a86a10f9c449c214bf908c6ea7451152"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/p4_group.lua",
+      "bytes": 828,
+      "sha256": "60076e346a677ad86b4e1f4fabea9c0144943cd4f448515c8fbaf12eea6574ae"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/p5_fm.lua",
+      "bytes": 914,
+      "sha256": "25eb35f146398790636069740c66485005deb3a689057d36ddacbd847ac5a1e3"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/p6_cls.lua",
+      "bytes": 670,
+      "sha256": "1084977453d13bcfb22bbbe5212fe818acc120350a28a6067f4e89635cfd31a0"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/p7_capture.lua",
+      "bytes": 401,
+      "sha256": "0e6bf57f24f0248547cbe11a1adcb74280eb4de437359b0077df7dc9f55bca0a"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/p8_read.lua",
+      "bytes": 739,
+      "sha256": "8d864775d4b771790ab12d4fbc397414b9822a547c46f58d808b2700d6bcc491"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/p9_fences.lua",
+      "bytes": 688,
+      "sha256": "75ada0dc528e60c23603b5af1221d91c506445fd3d7b5fbdc0d6a6a7e4ef1f8b"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/pack_installed.js",
+      "bytes": 1798,
+      "sha256": "3b347e69579b1f30a4b8c60358ab333d0a2d535bc6b1f51360d25789262acd70"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/party_bot_gate_probe.js",
+      "bytes": 755,
+      "sha256": "73e1556d8eed70bcd1e37c7c70260486fedba8278a8c51aef3edaee30bf87a2f"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/party_bot_inject.js",
+      "bytes": 12210,
+      "sha256": "fa72d57975b802e05dc8d8d88544618000850d780dffedd3ac2c12bd56fe23e1"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/party_probe.js",
+      "bytes": 960,
+      "sha256": "40bf06e9b4e587e0e1522cff5059623db9406d8fd01ba1e603738c94a3bb0cbc"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/pass_recon.js",
+      "bytes": 1793,
+      "sha256": "ca0b5ee478b84edb7cd966ec86da9cb314b4da9912fe0032c4bf5b1436d88ca8"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/peek.py",
+      "bytes": 854,
+      "sha256": "6a6d76eb187bf07f8e96ee3d61563d9dccaa35590d52ced09a5a35ff603c2e6b"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/play_crash2_both.sh",
+      "bytes": 1865,
+      "sha256": "8a8512c1ccafa2f6e22cda1c0a30aaa29123a6492a5476dbe6a13754af1a248f"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/play_crash2_bots.sh",
+      "bytes": 1382,
+      "sha256": "d6b2c62f6d14984c91caea09a63125d31dff8620db778a27bf42b47476a31659"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/play_mp.sh",
+      "bytes": 3170,
+      "sha256": "bcbd5a0715ddef27dbc69fd84ef9a471347eb60dc0fd5d1741e546e41f9de19b"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/play_observer_occupant.sh",
+      "bytes": 803,
+      "sha256": "a714f5d6956c7a3a02c2c3092cb55e5e35c29bed5dc3ee5408153d684d905297"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/play_offline.sh",
+      "bytes": 2332,
+      "sha256": "72721feee3250dc072d2f7209c25531baa31f756c990c4eb447b7f3014e332e8"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/play_offline_br_experiment.sh",
+      "bytes": 2331,
+      "sha256": "fcb096a8d9537e197a4e116100b397db7455aef3720a7d5237fb20b83f6a84f9"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/play_one_bot_mingfx.sh",
+      "bytes": 1160,
+      "sha256": "2782929c5494900df19eded0af63254a1576f455ff85f879fd4e9f773e053843"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/play_with_bots.sh",
+      "bytes": 2033,
+      "sha256": "67afad612a9a31b8fd1a9b81e71e23fdcc83e542c60bf58c8006818637347724"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/play_with_native_ai.sh",
+      "bytes": 1709,
+      "sha256": "0849609ee15d937973dcd4a06e14e5260e51c17375c4d71ebcc638a010644dee"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/prepare_loadout_frontend.sh",
+      "bytes": 716,
+      "sha256": "fe558664b454cc9a468d3fbf22c63d88277a117ddd0b8be412bab1da0e54f0ad"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/probe_ddl_api.lua",
+      "bytes": 1215,
+      "sha256": "4317cb5ba7d9b10bd78d9e5b86a574e119447adf58dc276d69ba34c51a9fa280"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/probe_equipped.lua",
+      "bytes": 1126,
+      "sha256": "146c306fbb4b3ae25470103b487ad5e937e64dde786c23bee9c38c28095408b6"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/probe_find_ns.lua",
+      "bytes": 895,
+      "sha256": "0cf3e810ac9f316934a80da357fc92bfcd5d10192117eb959ac8b02fa32c77ed"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/probe_gear_datasources.lua",
+      "bytes": 676,
+      "sha256": "95839dcb7780ff604a58418d3e52188cd9a7050e266da235e88c0df68461f4a1"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/probe_gearup_cmd.lua",
+      "bytes": 1812,
+      "sha256": "715fe078381d7357da376afd232c808018cca67ce3f86c55342748ce7f2cdcc5"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/probe_hash_keys.lua",
+      "bytes": 733,
+      "sha256": "65826e90634ce79981f0d89b96dc624fbf02a6a2020aaf6fa7137419bc6eabce"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/probe_inmatch_loadout.lua",
+      "bytes": 1866,
+      "sha256": "978eff9a000393bf60012068fce2b0d67e7de81301804615fc33b79e2cd4c75d"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/probe_level.lua",
+      "bytes": 704,
+      "sha256": "a7dd50b3529c19228f1634bac97ad45a08d0dd68743bf014023c04ceef30f81d"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/probe_loadout_contents.lua",
+      "bytes": 1836,
+      "sha256": "41c2ed4d02ed77e45b5fd19ad32f3df1e30ccd681621601c8f186fd938715296"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/probe_loadout_ddl.lua",
+      "bytes": 2048,
+      "sha256": "b4aa5e9a4920835fdb554032d4f9f6ecad68cbbcbff97280e237c44c4e5a8962"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/probe_loadout_groups.lua",
+      "bytes": 926,
+      "sha256": "c4797064e57655c1b9c34232dd65c0ec2c672e71c83d70a9176189ab46bf5523"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/probe_loadout_inuse.lua",
+      "bytes": 1465,
+      "sha256": "26e9118c7ea4319638be5bc0716400f23192ea96cc65c8396aef537f97a22bc7"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/probe_loadout_keys.lua",
+      "bytes": 853,
+      "sha256": "e3232aeff90c3e2d6645d59d85696d91abbe91203b03195fdbe1231c10cab09f"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/probe_loadout_paths.lua",
+      "bytes": 1393,
+      "sha256": "0d39673e6e57df7000e7f6738dd657fbce7e304e27c2eaaf63cfcaf3ee017d0f"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/probe_loot_catalog.lua",
+      "bytes": 855,
+      "sha256": "f803e38786074f3cd107eabd06aee24c75fd758c3fe14a6762cf950bf2fa8272"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/probe_loot_fn.lua",
+      "bytes": 1015,
+      "sha256": "39e917c2e795d5520fdb19b379a31f0e079fa23220ccf9358f1a42ece88cec44"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/probe_loot_lootid.lua",
+      "bytes": 1232,
+      "sha256": "18e7f974d4a5fe9c9b1d189cef5c325e5cdceb45398b237a802352c119dcfbb7"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/probe_menu_registry.lua",
+      "bytes": 982,
+      "sha256": "c8ef064d8c42de616ef2cab147183d32d720daa17df96c8e24af3c14e1d0a8e5"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/probe_named_motion_blur.lua",
+      "bytes": 630,
+      "sha256": "dff9c88b6ce71ed2f924fab149aa8155426c99b14014adeee72ec5679f546760"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/probe_nav_hook.lua",
+      "bytes": 982,
+      "sha256": "b5c364cd9fd0731cecf9a1a5c2ef4bc25b8199b339ab403d8eebba71c56e4583"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/probe_nav_variants.lua",
+      "bytes": 1193,
+      "sha256": "3c492420f2d979cc2e5dc9491201e398dbac224afddeda5acd16f15f35588307"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/probe_prog.lua",
+      "bytes": 827,
+      "sha256": "3742cfa53e717af1ebd4cf52d92174f7c9cc8edd588bde2e9572eed2ab125e1a"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/probe_unlock_state.lua",
+      "bytes": 1912,
+      "sha256": "4cf97aeb1196adbf03ba6062624be0d28955748125f7a474b0548e58b002913d"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/probe_unlock_state2.lua",
+      "bytes": 1849,
+      "sha256": "6d4a8de5e136d618edaee2e9473609ad073b3e1840e29d256e3287e81687c09a"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/proc_probe.sh",
+      "bytes": 787,
+      "sha256": "a6b363a1fc85859be98f603a18067b44a0ba0db7689b96a22e6b2aeba29943c8"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/radial_blur_demo.py",
+      "bytes": 1752,
+      "sha256": "9ddd3b42c8264fa1ba03db9816f0f21e1d042bfa8c1cb272ed740abb13ecf05c"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/radial_blur_dvar.py",
+      "bytes": 839,
+      "sha256": "0e739335ed2259faf365b01d7dd7cb19a60be654553f760a21ae20ccac156732"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/radial_blur_parameters_readonly.py",
+      "bytes": 926,
+      "sha256": "76ef744a7ed5994468872d4e01906d70c6a3cbe0bf7351a26ff8799f91d6fdc6"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/radial_blur_view_readonly.py",
+      "bytes": 855,
+      "sha256": "7f4b6b7ffcfc8ecd5026dde81e3e1800c5820ca28ea7e50ad854280633364250"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/reopen_main_menu.lua",
+      "bytes": 245,
+      "sha256": "54a097ca59a03110f519c3809ef99fca4f0ba8399294feb3575f81f490dac950"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/require_probe.lua",
+      "bytes": 898,
+      "sha256": "c0a09dab4294049ce557e25ffcb44af1cdb6934a5e9a5a263a30bf9b679c8cea"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/reset.lua",
+      "bytes": 40,
+      "sha256": "c32d302d3564f6c703a70e935b5ffdf497b041ed248fb91fa924b344710d5708"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/restore_customization_hub.lua",
+      "bytes": 49056,
+      "sha256": "f21dab063cc9e8492ef243b0d80bb6212ea1d220dfcfc7ca6f55f4855a7bd86f"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/restore_hub_binary.py",
+      "bytes": 1458,
+      "sha256": "b7d69a7e2b4f91b14d927bc2194c4613578f5e2b68f4413f34fc1adbaeecceca"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/restore_loadouts.py",
+      "bytes": 1763,
+      "sha256": "f755822d8866bd78bee6ed757b00119fb80c85a00919d9c59f72949bbc31eb08"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/return_frontend_probe.lua",
+      "bytes": 361,
+      "sha256": "d1fe0ea8452cf5bd5357e66d544d5c17679b237628bb2e384dc675154b54dd1c"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/run_arm.sh",
+      "bytes": 627,
+      "sha256": "10bc11c5b849f25a03861609cbb8c50729ab11bfa2c20ff5b0dda7dc291ae00e"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/run_host.sh",
+      "bytes": 1707,
+      "sha256": "fc110f3c9d8920fc6ec2ab566ffe66b1136efd66b282d92a9c582fe368876cad"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/run_map_loader_observer_readonly.py",
+      "bytes": 2703,
+      "sha256": "19b5b4441710305a340c0cc88dcae4029d6808c314c9005a1e4ebb49f0f66e74"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/save_loadouts.py",
+      "bytes": 996,
+      "sha256": "06b262fde498734f5c1f2652ad771fbd66ba9f1c529a5fe18b18d6478439840a"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/scene_try.lua",
+      "bytes": 927,
+      "sha256": "b2c605d527b74facb638a7f92c456225275abef8d73a3db8a89a81797dd54dc1"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/sdk_branch_history.js",
+      "bytes": 760136,
+      "sha256": "dce555650298e726848a7314f38d088e16bac8c13d2fcb7ec707c02f102012d5"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/sdk_branch_history_src.js",
+      "bytes": 4922,
+      "sha256": "e26df22bfac05ab93aa6238d71e35fe2db329dc76c3302bd435777637c456115"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/sdk_close_context.js",
+      "bytes": 757745,
+      "sha256": "9f009f6bb41da78b95cf103dad13f6c0e54c62dcf6f372668e330fe1fc9d9acf"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/sdk_close_context_src.js",
+      "bytes": 3987,
+      "sha256": "a5c86d625e93d98e151fc643dd00e40211ced22e6c327d1cfc2ffa53047d7f7a"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/sdk_entry.js",
+      "bytes": 760647,
+      "sha256": "255646fd2902065491123f5d0f17d6eb0bbcd6c803ab75b0ae552e5e74328726"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/sdk_entry_src.js",
+      "bytes": 5206,
+      "sha256": "e80fc5f83f14826774895e4d08da1171dadbf5bd216bb4211ce2f46890f5cdea"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/sdk_fault_control.js",
+      "bytes": 760078,
+      "sha256": "cf35767095e5692bc4df99e492feab91a385cbf048d68525e9217b8a3d252b3d"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/sdk_fault_control_src.js",
+      "bytes": 4896,
+      "sha256": "771faab754dfe09f830c79a0365d2b9ae85401f389642c78a4be2c18c5f47fb5"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/sdk_lua_at_close.js",
+      "bytes": 1372,
+      "sha256": "ef85b1046282a942f7e34a84623bfc084530c3cb5c886b7a5b11a1220e92df2a"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/sdk_lua_origin.js",
+      "bytes": 1298,
+      "sha256": "1e7a677b4d9df871701694248079ba867ded88879d44f9b635cbf5edae06751b"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/sdk_trial.py",
+      "bytes": 1875,
+      "sha256": "c5da8b7bbc96a560b6b13a5078b168407b6aef8372d586f8448bfc109d0f59d2"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/seed_all_loadouts.lua",
+      "bytes": 2795,
+      "sha256": "d2ea31bbfb41d12c0e5805e8d37518ab4e32d501bd76c175293a35039e43d901"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/seed_loadout_class0.lua",
+      "bytes": 1679,
+      "sha256": "b1321b6d7d2975eb611e1274e5d062326e4b3fd46c3f0b2711e8af9cfbf20290"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/server_cmd_trace.js",
+      "bytes": 3447,
+      "sha256": "11d619437311ee44c532e8f9a6e99857ad05df3c16f9b52d1f8059549dfe5a85"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/session_native_observer.js",
+      "bytes": 1536,
+      "sha256": "014c8db526dd8957f858a93cb720a69d308105265925c6fa09ef809090d898f0"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/shots_after_enter.sh",
+      "bytes": 443,
+      "sha256": "e4697a8239f7f399c7f4574c757adc5b68e35baddbca579232ff2178b9913b9d"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/skip_entchk.js",
+      "bytes": 449,
+      "sha256": "1e7107c0eb2d911accd894b67966cf86434118e1a6781326ba7b62001e097ae4"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/skip_online_fences.lua",
+      "bytes": 5233,
+      "sha256": "484a503a8c48731cacb330228abed5d9ef120488a45b4cb2bdbd9cae0c84057d"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/sleep_probe.py",
+      "bytes": 2347,
+      "sha256": "3ee3cf64e7874174131316ee84e2fa5c1bc74310a88ab3d2a2d36899c029cc0d"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/slot_state.py",
+      "bytes": 1114,
+      "sha256": "654c35ab0a3bbe229a510933b97b9bc22ddca28dfcbd260d85c7976a7176e329"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/slot_state_snapshot.js",
+      "bytes": 1630,
+      "sha256": "0bdc80bfdeac2a273ff33bcec46be137503b9a7977da8c05c207458b1a1f87e7"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/spatial_temporal_neighbors_readonly.py",
+      "bytes": 943,
+      "sha256": "e8f313e934033e2c2a6eab11941bf28ff5e7b054726c7b844a4f59db0e4e58fa"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/spatial_temporal_readonly.py",
+      "bytes": 1293,
+      "sha256": "b18c18c249dabd5b5f1efc46eeb3d089ed1e0cab10bec092ac78d125d09455be"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/spawn_tc_bodies.js",
+      "bytes": 4083,
+      "sha256": "a08915d1dd780d7088df3a055b21f009e5ac0776bd4ae0cf29b5254bba41f146"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/start.lua",
+      "bytes": 1044,
+      "sha256": "b0c670b79a09519db7c52dc839aad4bbc8a703119b87f6164fe4d4936969d928"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/start_next.lua",
+      "bytes": 386,
+      "sha256": "e18ddc95e1e53d44373b736e2ea250c5c6ca757f3fa9ebcde3735dbbff77f4d5"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/startup_query_fallback.py",
+      "bytes": 2204,
+      "sha256": "7e92679f4e36ebd376f5af533d8b9d22a3dc7504340400ccf77c1b04386a3885"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/streak_getter_dump.lua",
+      "bytes": 210,
+      "sha256": "77094cb0656620bd861a9c8ee3e931453ae7f85aa63271415b1a6b0b9281d789"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/streak_readiness_probe.lua",
+      "bytes": 476,
+      "sha256": "33ef6af7ede747da76092cd185bd3327c38e0bdff58fbc0fd818f04592a7035b"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/stuck_sampler.js",
+      "bytes": 783,
+      "sha256": "02b81c62ab10b05cf74615cfe5b22ca6e81fe909a446d62e4bb01778a489195d"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/summarize_arm.py",
+      "bytes": 1265,
+      "sha256": "cef247b83ef02d383fc57be9108d6ab9ae4c34186014b3cd41ca29dd318c213d"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/summarize_host.py",
+      "bytes": 1462,
+      "sha256": "6a4932a6b05a339e10d90b08c2a4c41c59f59160140651a545860320659a108f"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/sync_loadouts.lua",
+      "bytes": 3533,
+      "sha256": "e4338009be74a6b39c9f5cfc1e209a13166228f01c02137090078995847acd10"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tap_after_probe.sh",
+      "bytes": 608,
+      "sha256": "922b4090eaf6558a4bff02e00bf79ac5df56dd68bc970bd037b028b87c3cbd71"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/team_select_client.js",
+      "bytes": 3559,
+      "sha256": "c1ac3babb603dad26e3a7896e8e89adce3c5a9c2a4ebab87be3e4b4be7c7bc5e"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/team_select_direct.lua",
+      "bytes": 600,
+      "sha256": "471c7b5055475ae0b24f7bb98800e69e2d56557c3197eae5bdf3124473617db9"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/team_select_trace.js",
+      "bytes": 2498,
+      "sha256": "392fecff3bdad6e0c7af4d08741890f5c3476adcf958de6319317d49686441d9"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/test_device_pid.py",
+      "bytes": 776,
+      "sha256": "263c47160ee45f82ea29ad370df8b52c1fa7768c65f0c8640b965681c8133c8a"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/thirdperson_live_models_readonly.lua",
+      "bytes": 1768,
+      "sha256": "c9947792a58b4a103f303318fffeaf035ddeec5497fe1e0a01ad4537a2537a43"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/thread_cpu.py",
+      "bytes": 1886,
+      "sha256": "a60b3e132745121860e155663af086b9a0e0ab5ec32bc96bc63d9c7da5169939"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/threads.py",
+      "bytes": 1187,
+      "sha256": "3243a4f709af184c963d89bd46ed80696a9dc3f371922c784dd5677d5413aa16"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tick.py",
+      "bytes": 875,
+      "sha256": "75688cad7b41dc32fecc31f8b3407a248daf1bdba32e7901955051a244aaaf94"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tick_probe.py",
+      "bytes": 1740,
+      "sha256": "ba5cc0e20b3dad1b131595593a6b0a03b22e6def25f37876873b48c6db07012b"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tonight.sh",
+      "bytes": 2654,
+      "sha256": "c1a82514049efe762645b26b12ec9be3753de0b719d79a5812e9eb4940a562f7"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tp_calls.js",
+      "bytes": 1178,
+      "sha256": "64c9ed004164d97f9d67bfeab9f6ad0ae87aa6b45b12c99b603ae46136cb8af9"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tp_camera_local_probe.js",
+      "bytes": 311,
+      "sha256": "d6c8734e2cdd070a166d2af463fe12db36b6d6629cce746d033328abf17339bb"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tp_chain.js",
+      "bytes": 1283,
+      "sha256": "66080a1330445ae57c38d8fa80f090a4162554e3cb6e876c460a32c7027c0002"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tp_entry.js",
+      "bytes": 1571,
+      "sha256": "9f8494c54f1b8350391dbc8025583c24ebb01d78651efc7f01ac10ec0f831ce9"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tp_enum.py",
+      "bytes": 755,
+      "sha256": "366aa62851ddaaf0e4e6992c8e77d14178286987014331db965f547af0ea65cc"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tp_find.py",
+      "bytes": 957,
+      "sha256": "42cf806cd965876ee2df4d030527d3c81797d77ac2d71b5af2dab1028a08d2c9"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tp_find2.py",
+      "bytes": 635,
+      "sha256": "f617f08f2da110af5f0eefe196b3faec17464f4856234acc0de1da8e6fa3b0fd"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tp_hook.js",
+      "bytes": 2049,
+      "sha256": "31c2cd1d3a1490e57ab6ed64f43c8d6a106b73ec239a4a78dd6999d61635979c"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tp_hook_live.js",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tp_ids.js",
+      "bytes": 651,
+      "sha256": "1b7e35fa99854fe8c1e34cc08969693f651d49d687d0d19316180a58604e8353"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tp_live.py",
+      "bytes": 4471,
+      "sha256": "66159bc134bc7b9fc76441b9fed58b1db1b85212590ec18b8bdd52c75f7da8cb"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tp_live_toggle.bundle.js",
+      "bytes": 760479,
+      "sha256": "365de5fa5f1bffd82368a439fa9728d00d57e07fedf549b73b2af2f2c205a6a5"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tp_live_toggle.js",
+      "bytes": 5074,
+      "sha256": "e24e853e0e5dd1834cc7a1f8bc38cf5ec98cf0fd47a1561507332afacdeebf95"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tp_lua.py",
+      "bytes": 835,
+      "sha256": "2fbfacf58463744324dc321630ebc100cabd7613080970a9ab6d10349bf893c1"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tp_overlay_probe.bundle.js",
+      "bytes": 754456,
+      "sha256": "584b1af3afb7cef560d220ecea2b55e699aca08413024972f01af597845fd2b5"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tp_overlay_probe.js",
+      "bytes": 1638,
+      "sha256": "0b93dd83815ec1f9fdc32c44d1e4e39b2add5f3af909e46423a05ec75f9ee507"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tp_predicate_oneshot.js",
+      "bytes": 793,
+      "sha256": "be570b744a2d13bf1d03a32e360905ad45827b6bbf76968633bcc4a1730688f9"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tp_predicate_readonly.js",
+      "bytes": 903,
+      "sha256": "8c57728ffd8808fb40c7c58b8478ff08cda10ae776a920e702b4b71f46ec95e1"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tp_probe.js",
+      "bytes": 2132,
+      "sha256": "ea4360622b2656d20b68dc0f5f5ed87f9a20e003457d07928fb754e2efc14e67"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tp_resolve.js",
+      "bytes": 1580,
+      "sha256": "46d6a88eae0565c7a70cbad458dae95662083c03edb2d21c62746861101d5752"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tp_run.py",
+      "bytes": 756,
+      "sha256": "1063a873e3dff0b51fcbefe03bb266a95edf40d97133a928e2e2430cd96c4907"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tp_scan.js",
+      "bytes": 840,
+      "sha256": "89b13e7b9a14780eccb47a7062e7ad9268d82b4ffe4d6e3d7bbe226cbd01b616"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tp_scan2.js",
+      "bytes": 1077,
+      "sha256": "c4e04bb5d8e527effaa432d95043d10b8920da8612c9a70cffcdc250ba4f1803"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tp_scan3.js",
+      "bytes": 667,
+      "sha256": "f3ac449ac7809d2c90c0ea05956df58c0988380eab5199a45f49685e3aeea9a2"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tp_slot.js",
+      "bytes": 768,
+      "sha256": "ec686f3d8ea331796f190ee96a6f4eec2da0002a17ceafb59a63828b73be6ff3"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tp_terminal.sh",
+      "bytes": 186,
+      "sha256": "03ae3a25aed94a8b190ccee68b5b148b400a31f27b9ad3a5add75384f9dafbf9"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tp_terminal_agent.js",
+      "bytes": 2298,
+      "sha256": "597f5675690fa8edbb3dbde008a71047dff75aaefb202d7354f7ff2a827e94b4"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tp_terminal_controller.py",
+      "bytes": 5871,
+      "sha256": "062187005cccf1ce58c68f2e2d48d96688cad0366a96f7ed63824d62a05e3d38"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tp_toggle_live.py",
+      "bytes": 2740,
+      "sha256": "543b950e80333592f4238b1abe14c6af0be4f7c9fa520c58305ab74693660a41"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/tp_write.py",
+      "bytes": 1388,
+      "sha256": "37dafc06591c97d39afc9684c8b063c02abd3f1eddc558e34411d140d0c2cde2"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/ts_step1.lua",
+      "bytes": 1094,
+      "sha256": "f6bfebbbb98e93a9f2ca643d7bda5b4468b34753a9ffe4d125ed939c59865491"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/ts_step2.lua",
+      "bytes": 2036,
+      "sha256": "ba419bd53c4a294bf38099acbc0550c86265e5cbb546b05d7be0e713d0f2b680"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/ts_step3.lua",
+      "bytes": 510,
+      "sha256": "d80e3749f3dcbeaa262fa1a8d29c5bdeb1ec94dddd4610271b594ad22c0ec1fd"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/unlock_all_menu.sh",
+      "bytes": 2009,
+      "sha256": "a84cb43b48c16aa31a5160b872be839243293de43737a8fe7408b099eeeaa9c0"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/uri.lua",
+      "bytes": 168,
+      "sha256": "6bcda0d97507fef93aa3fac2b90a343a0ccc0db16e45daf5e9b984eccf78b5aa"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/verdansk_pack_files.json",
+      "bytes": 67463,
+      "sha256": "dd9f308d31e0c0c148aef3394b01c14e54ec6b472e1f10c574055f707b1bb734"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/watch.js",
+      "bytes": 3407,
+      "sha256": "36c6c87c988e5f4e997447bc7d95a8a7bee98445fd3f57669ba50bad5292c3d8"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/watch.py",
+      "bytes": 2233,
+      "sha256": "e813c48851917d9713a73c0ebcdad6d3b73ef9fc90a030a6b6c5a7fd7febd2e1"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/weapon_def_snapshot_readonly.js",
+      "bytes": 1223,
+      "sha256": "8b096c6835112418ba8461d2b6d5b5097e02a68183c158bcd611488062e748f6"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/working_catalog_probe.lua",
+      "bytes": 1004,
+      "sha256": "624bb92aa56abc6d6b09d6d064bda9ad14ccea16747aeb6e2b18921e130c9970"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/working_navigation_probe.lua",
+      "bytes": 278,
+      "sha256": "e23ebba79d0d820779dff78d783e98bc3b226504ca0412b1cc271c56e64eb77f"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/zone_inject.js",
+      "bytes": 2416,
+      "sha256": "d807c9bf4fd41568752fc126bf6feb8c01094b109f2bb36e97374f83b6092368"
+    },
+    {
+      "path": "analysis/frida_tools/lua_bridge/zone_lifecycle_observer_readonly.js",
+      "bytes": 3175,
+      "sha256": "7bec3cd2365e6319e3414072216a128e89c96b3f35f32d04ef8783060bd95b07"
+    },
+    {
+      "path": "analysis/user_tools/session_manager.py",
+      "bytes": 11242,
+      "sha256": "5f0b1c75b0c558958fe81528f8b5b9f4b1087b8581d3958cfe97f92804b3e7a2"
+    },
+    {
+      "path": "analysis/user_tools/wzm_terminal.sh",
+      "bytes": 6383,
+      "sha256": "65afb533c342ceaaa9e4e958f5850e24180c70daa0d26e6f7fffa876431dafbb"
+    },
+    {
+      "path": "audit/PRIVACY_AND_PORTABILITY.md",
+      "bytes": 2864,
+      "sha256": "ae20186fc5e219980e5bff6298467c69ace16821e87412ef39a9a7bc1600dcf2"
+    },
+    {
+      "path": "audit/SOURCE_SELECTION.json",
+      "bytes": 4540,
+      "sha256": "136920f9a3993e1ff92abb9e0a821c8a081ff5bc2f9fa4ed85f401583dae3d73"
+    },
+    {
+      "path": "bin/adb",
+      "bytes": 534,
+      "sha256": "0d12608265a183b4971a2329c5a9e67bc313ccfcecd51839c49e4af3d3bcb4f7"
+    },
+    {
+      "path": "configure.sh",
+      "bytes": 627,
+      "sha256": "d2d7fd8e7b36b68f802881f84363461c526723255c111851ce3a37570529f10e"
+    },
+    {
+      "path": "optional_phone_autostart/auto_fences.js",
+      "bytes": 2046,
+      "sha256": "ed9471f52c6800b8e5742938db6f4c0e7deea0c628b60b35d31ea75278534758"
+    },
+    {
+      "path": "optional_phone_autostart/module.prop",
+      "bytes": 257,
+      "sha256": "2ec8ade415adebfe7ed28b140062ca409b9b74319afdb149dcb130b242c9419d"
+    },
+    {
+      "path": "optional_phone_autostart/service.sh",
+      "bytes": 1793,
+      "sha256": "55cb2508d1c77847700805565bdcb4f9db09d9baad920d7aab90753b2bdfe753"
+    },
+    {
+      "path": "optional_phone_autostart/skip_online_fences.lua",
+      "bytes": 5198,
+      "sha256": "c5f455506060273ef853a88f107f96cb38d5dc1813a3810b77dedaa53eb02434"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 97,
+      "sha256": "cd88e086fc655cb68c02f2be9e0c4cbfbe3fc06ead9e9477174ccb0c296ae2d2"
+    },
+    {
+      "path": "run.sh",
+      "bytes": 4862,
+      "sha256": "451114e3b7e915e91c71d3a47b7a83c2811a61f3ffd305d60101bbbcb6ea3492"
+    },
+    {
+      "path": "setup_mac.sh",
+      "bytes": 821,
+      "sha256": "2c9b08d9f68886b3400f1fe7e749bc4edfae7c474faccffc80680415463b232c"
+    },
+    {
+      "path": "tools/audit_source.py",
+      "bytes": 3937,
+      "sha256": "93855e5a9a0d9ce6f683d1063b7df124065983283114540b8fe356d673a04e55"
+    },
+    {
+      "path": "tools/build_offline_bootstrap.py",
+      "bytes": 3152,
+      "sha256": "da0a889216aab0b0e3a98fee82f06d3f8b6aa30d85a70ff28f1105c2a715342f"
+    },
+    {
+      "path": "tools/mount_offline_bootstrap.sh",
+      "bytes": 2386,
+      "sha256": "feff2e89f88f7270d68aa84e5df5f6b4be99ed509984febd514bbaded630f57d"
+    },
+    {
+      "path": "tools/offline_bootstrap.html",
+      "bytes": 696,
+      "sha256": "65f8c36bf0eee333dd743e42631615d94cd253a1e9fdf7b47cac2790d66cc414"
+    },
+    {
+      "path": "tools/test_portability.py",
+      "bytes": 1928,
+      "sha256": "000eb550694d14d42f3991d28c8a824d50255184896ae675e2527fc9d55d0d2c"
+    },
+    {
+      "path": "tools/unmount_offline_bootstrap.sh",
+      "bytes": 1015,
+      "sha256": "6ca6f4c441be5cf184671eedfc0c4f5ae0bf30cd1d2cfa012b78261f3175798a"
+    },
+    {
+      "path": "tools/verify_game_build.py",
+      "bytes": 1437,
+      "sha256": "e0cc2d804814f5cd7d380d686f08261920049945416fe86cf9a7dbe728cf5c25"
+    },
+    {
+      "path": "wzm",
+      "bytes": 16928,
+      "sha256": "c0b471db7eac400ca7ab6ceca108fcce2f027ee1832ff466ec1f3652854d3a86"
+    }
+  ]
+}

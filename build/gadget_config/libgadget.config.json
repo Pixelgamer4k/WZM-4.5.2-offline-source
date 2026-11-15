@@ -1,0 +1,8 @@
+{
+  "interaction": {
+    "type": "script",
+    "path": "libgadget.script.so",
+    "on_change": "ignore"
+  },
+  "runtime": "default"
+}

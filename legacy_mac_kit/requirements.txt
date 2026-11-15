@@ -1,0 +1,2 @@
+# The exact tested macOS Python Frida interface; phone frida-server should match.
+frida==17.23.3

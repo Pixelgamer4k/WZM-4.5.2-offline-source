@@ -1,0 +1,74 @@
+{
+  "format": "gear_v4_original_source_manifest_v1",
+  "game_version": "4.5.2.22729281",
+  "generated_asset_sha256": "a2fb3af61c64ff57937d292da047a8be2624e6fb3a41ea80763ff67c68a3b26d",
+  "hub_render_proof": "NOT_VERIFIED",
+  "in_game_execution_verified": false,
+  "native_profile_proof": "NOT_VERIFIED",
+  "original_hub": {
+    "byteLength": 12082,
+    "sha256": "5483d73aeade40684f2fe3ecb167f09ed6cc06145260b5727bb53596fbb50822",
+    "source": "analysis/frontend_offline_static_20261104/module_11d1836.ljbc"
+  },
+  "original_library": {
+    "build_id": "9528f1d264b40639b57e14998e01d080",
+    "build_id_rva": 1552,
+    "code_windows": [
+      {
+        "hex": "fd830091ff0306d11b0a019058d03bd5",
+        "rva": 53985760,
+        "site": "lui_frame"
+      },
+      {
+        "hex": "a81640f97f0000f10900009029112191",
+        "rva": 71894936,
+        "site": "lua_load"
+      },
+      {
+        "hex": "494d298b6ae208913f0108eb29318a9a",
+        "rva": 71855076,
+        "site": "lua_pcall"
+      },
+      {
+        "hex": "284d288b1f010aebc3050054080840f9",
+        "rva": 71841600,
+        "site": "lua_tostring"
+      },
+      {
+        "hex": "6a7c4093e203012a0819098be103002a",
+        "rva": 53586700,
+        "site": "profile_bind"
+      },
+      {
+        "hex": "f40302aa081740f9f503012af30300aa",
+        "rva": 55954036,
+        "site": "preview_update"
+      }
+    ],
+    "mapped_max_size": 233091072,
+    "mapped_min_size": 233086992,
+    "module": "libgame.so",
+    "preview_original_opcode": 3506897919,
+    "profile_bind_rva": 53586668,
+    "sha256_of_original_file_for_offline_audit": "c8f5e9df317b7442567e61255ac7894bbf1b6693c30fcfd3a6ee6cde6c04b7d7",
+    "version": "4.5.2.22729281"
+  },
+  "original_lua": {
+    "fake_player_data": {
+      "byteLength": 443,
+      "sha256": "7609e213fb86d9baa229c39ae67edc0cb0d71070cf535795759fb0c2e4105706",
+      "source": "analysis/frida_tools/lua_bridge/fake_player_data.lua"
+    },
+    "open_gear_up": {
+      "byteLength": 701,
+      "sha256": "ca72a950c81a63906ebf7833490cabebeafcab675c394aea76b043884e75de9f",
+      "source": "analysis/frida_tools/lua_bridge/open_gear_up.lua"
+    },
+    "seed_all_loadouts": {
+      "byteLength": 2795,
+      "sha256": "d2ea31bbfb41d12c0e5805e8d37518ab4e32d501bd76c175293a35039e43d901",
+      "source": "analysis/frida_tools/lua_bridge/seed_all_loadouts.lua"
+    }
+  },
+  "source_only_mac_static": true
+}

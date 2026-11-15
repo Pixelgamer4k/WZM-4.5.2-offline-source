@@ -1,0 +1,275 @@
+#!/usr/bin/env python3
+"""wzm — Warzone Mobile offline launcher (terminal UI).
+
+Type what you want in plain English, for example:
+    nuketown tdm 5 enemies 2 friends hardened 30 min
+    crash domination 3v3 veteran
+    verdansk 6 bots
+    again            (repeat the last game)
+    unlock all       (run unlock-all at the main menu)
+    stop             (end the session and close the game)
+Or run it with the request directly:  ./wzm nuketown tdm 4 bots
+"""
+import json, os, re, signal, subprocess, sys, time, pathlib
+
+ROOT = pathlib.Path(__file__).resolve().parent
+LB = ROOT / 'analysis/frida_tools/lua_bridge'
+RT = ROOT / 'analysis/runtime/match_entry_20261102'
+LAST = pathlib.Path.home() / '.wzm_last.json'
+DEVICE = '127.0.0.1:5555'
+PKG = 'com.activision.callofduty.warzone'
+
+C = {'b': '\033[1m', 'd': '\033[2m', 'g': '\033[32m', 'y': '\033[33m', 'r': '\033[31m', 'c': '\033[36m', 'x': '\033[0m'}
+if not sys.stdout.isatty(): C = {k: '' for k in C}
+def col(k, s): return f"{C[k]}{s}{C['x']}"
+
+# name, internal id, aliases, status
+MAPS = [
+    ('Nuketown', 'mp_mgl_nuketown', ['nuketown', 'nuke', 'nt'], 'tested'),
+    ('Crash', 'mp_mgl_crash2', ['crash'], 'tested'),
+    ('Verdansk', 'mp_mgl_wz2_sierra', ['verdansk', 'sierra', 'vk'], 'tested (big map, slow load)'),
+    ('Broadcast', 'mp_mgl_wz2_sierra', ['broadcast', 'tv station', 'bch4'], 'new: MW2019 Broadcast on Verdansk TV Station, outdoor spawns, no boundary yet'),
+    ('Hardhat', 'mp_mgl_hardhat', ['hardhat', 'hard hat'], 'untested with bots'),
+    ('Slaughterhouse', 'mp_mgl_slaughterhouse', ['slaughterhouse', 'slaughter'], 'untested with bots'),
+    ('Downtown', 'mp_mgl_ftue_downtown', ['downtown', 'ftue'], 'untested with bots'),
+    ('Rebirth Island', 'mp_mgl_escape4', ['rebirth', 'escape', 'rebirth island'], 'untested with bots'),
+]
+# name, game type hash, aliases, status
+MODES = [
+    ('Team Deathmatch', '0x3f9bd6e4038d651d', ['tdm', 'team deathmatch', 'deathmatch', 'war'], 'tested'),
+    ('Domination', '0x6cec28f740df15db', ['dom', 'domination'], 'experimental'),
+    ('Hardpoint', '0x7727d380d55d0e58', ['hp', 'hardpoint', 'hard point', 'koth'], 'experimental'),
+    ('Kill Confirmed', '0x39e8297d7f7df31d', ['kc', 'kill confirmed', 'confirmed'], 'experimental'),
+    ('Search and Destroy', '0x1dbcd710fe215368', ['sd', 's&d', 'snd', 'search and destroy', 'search'], 'experimental'),
+    ('Frontline', '0x7aa5ae4c378e7c80', ['frontline', 'front line'], 'experimental'),
+]
+DIFFS = [('Recruit', ['recruit', 'easy']), ('Regular', ['regular', 'normal', 'medium']),
+         ('Hardened', ['hardened', 'hard']), ('Veteran', ['veteran', 'expert', 'insane', 'max'])]
+DEFAULT = {'map': 0, 'mode': 0, 'enemies': 5, 'friends': 0, 'diff': 3, 'minutes': 60, 'real': True, 'cls': 1}
+BROADCAST_INJECT = 'inject_sierra_bc3.json'  # spawns written by analysis/zone_linker/spawn_writer.py
+
+def words_match(text, alias):
+    return re.search(r'(?<![a-z])' + re.escape(alias) + r'(?![a-z])', text) is not None
+
+def parse(text, base=None):
+    """Turn a plain-English request into a game config. Returns (config, notes)."""
+    t = ' ' + text.lower().replace('-', ' ') + ' '
+    cfg = dict(base or DEFAULT); notes = []
+    for i, (_, _, al, _) in enumerate(MAPS):
+        if any(words_match(t, a) for a in sorted(al, key=len, reverse=True)): cfg['map'] = i; break
+    t_nomap = t
+    for a in MAPS[cfg['map']][2]: t_nomap = t_nomap.replace(a, ' ')
+    for i, (_, _, al, _) in enumerate(MODES):
+        if any(words_match(t_nomap, a) for a in sorted(al, key=len, reverse=True)): cfg['mode'] = i; break
+    for i, (_, al) in enumerate(DIFFS):
+        if any(words_match(t_nomap, a) for a in al): cfg['diff'] = i; break
+    m = re.search(r'(\d+)\s*v(?:s|ersus)?\s*(\d+)', t)
+    if m:
+        a, b = int(m.group(1)), int(m.group(2)); cfg['friends'] = max(0, a - 1); cfg['enemies'] = b
+    for n, w in re.findall(r'(\d+)\s*(enem\w*|opponent\w*|foe\w*|bad\w*|hostile\w*)', t): cfg['enemies'] = int(n)
+    for n, w in re.findall(r'(\d+)\s*(friend\w*|all(?:y|ies)|team ?mate\w*|squad\w*|buddy|buddies)', t): cfg['friends'] = int(n)
+    m = re.search(r'(\d+)\s*(?:ai\s*)?bots?\b', t)
+    if m and not re.search(r'\d+\s*(enem|opponent|friend|all(?:y|ies)|team ?mate)', t): cfg['enemies'] = int(m.group(1))
+    m = re.search(r'(\d+(?:\.\d+)?)\s*(h|hr|hrs|hour|hours)\b', t)
+    if m: cfg['minutes'] = int(float(m.group(1)) * 60)
+    m = re.search(r'(\d+)\s*(m|min|mins|minute|minutes)\b', t)
+    if m: cfg['minutes'] = int(m.group(1))
+    m = re.search(r'(?:class|loadout|preset)\s*(\d+)', t)
+    if m: cfg['cls'] = max(1, min(int(m.group(1)), 10))
+    if re.search(r'pick (?:a )?(?:class|loadout)|choose (?:a )?(?:class|loadout)|loadout (?:screen|menu|page)|select (?:a )?(?:class|loadout)', t): cfg['cls'] = 'pick'
+    if re.search(r'placeholder|dummy|spectat|no fight|passive|keep alive', t): cfg['real'] = False
+    if re.search(r'\breal\b|fight|genuine|\bai\b', t): cfg['real'] = True
+    if re.search(r'no bots|without bots|alone|solo', t): cfg['real'] = False; cfg['enemies'] = 1; cfg['friends'] = 0; notes.append('no fighting bots: 1 placeholder enemy only keeps the match from ending')
+    # limits from the launchers
+    if cfg['real']:
+        if cfg['enemies'] < 1: cfg['enemies'] = 1; notes.append('real AI needs at least 1 enemy')
+        if cfg['enemies'] > 6: cfg['enemies'] = 6; notes.append('max 6 enemy bots')
+        if cfg['friends'] > 6: cfg['friends'] = 6; notes.append('max 6 friendly bots')
+        if cfg['enemies'] + cfg['friends'] > 8:
+            cfg['friends'] = max(0, 8 - cfg['enemies']); notes.append('max 8 AI bots in total; friendly bots reduced')
+    else:
+        cfg['enemies'] = max(1, min(cfg['enemies'], 8)); cfg['friends'] = max(0, min(cfg['friends'], 6))
+    cfg['minutes'] = max(2, min(cfg['minutes'], 240))
+    return cfg, notes
+
+def describe(cfg):
+    mp, mo = MAPS[cfg['map']], MODES[cfg['mode']]
+    tag = lambda s: col('g', s) if s.startswith('tested') else col('y', s)
+    bots = (f"{cfg['enemies']} enemy + {cfg['friends']} friendly real AI, {DIFFS[cfg['diff']][0]}" if cfg['real']
+            else f"{cfg['enemies']} placeholder enemy (do not spawn)" + (f" + {cfg['friends']} friendly" if cfg['friends'] else ''))
+    return '\n'.join([
+        f"  {col('b','Map ')}  {mp[0]}  {tag(mp[3])}",
+        f"  {col('b','Mode')}  {mo[0]}  {tag(mo[3])}",
+        f"  {col('b','Bots')}  {bots}",
+        f"  {col('b','Time')}  {cfg['minutes']} min",
+        f"  {col('b','Kit ')}  " + ('choose on the loadout screen' if cfg.get('cls', 'pick') == 'pick' else f"loadout {cfg['cls']}")])
+
+def adb(*a, timeout=20):
+    try: return subprocess.run(['adb', '-s', DEVICE, *a], capture_output=True, text=True, timeout=timeout).stdout.strip()
+    except Exception: return ''
+
+def stop_all(close_game=True):
+    subprocess.run([sys.executable, str(ROOT / 'analysis/user_tools/session_manager.py'), 'stop'], check=False)
+    if close_game: adb('shell', 'am', 'force-stop', PKG)
+
+def tag_now():
+    try: return (RT / 'last_play_with_bots.out').read_text().split('\n')[0].split()[1].strip(',')
+    except Exception: return None
+
+def watch(proc, cfg, old_tag):
+    """Show the milestones of a launch while it runs. Ctrl-C ends the session."""
+    print(col('d', '  Ctrl-C ends the session. Keep this window open while you play.'))
+    seen = set(); tag = None; t0 = time.time()
+    def say(key, msg, c='c'):
+        if key not in seen: seen.add(key); print(f"  {col('d', time.strftime('%H:%M:%S'))}  {col(c, msg)}", flush=True)
+    while proc.poll() is None:
+        if not tag:
+            t = tag_now()
+            if t and t != old_tag: tag = t; say('tag', f'session {t}')
+        if tag:
+            boot = (RT / f'{tag}.boot.log'); log = (RT / f'{tag}.log'); inj = (RT / f'{tag}.botinject.jsonl')
+            b = boot.read_text(errors='ignore') if boot.exists() else ''
+            for n in re.findall(r'stalled at logo on try (\d+)', b): say('stall' + n, f'logo stall on try {n}, restarting automatically', 'y')
+            m = re.search(r'booted on try (\d+)', b)
+            if m: say('boot', f'game booted (try {m.group(1)}), starting the match')
+            if 'giving up' in b: say('giveup', 'boot failed after all retries; run it again', 'r')
+            l = log.read_text(errors='ignore') if log.exists() else ''
+            if '"clientEnterWorld"' in l: say('world', 'you are in the match', 'g')
+            if '"FATAL"' in l: say('fatal', 'the game raised a fatal error (see the session log)', 'r')
+            i = inj.read_text(errors='ignore') if inj.exists() else ''
+            if 'botInjectFinal' in i: say('bots', 'bots joined', 'g')
+            if 'botInjectError' in i: say('boterr', 'bot setup reported an error; the match keeps running', 'y')
+            if time.time() - t0 > 60 and int(time.time()) % 15 == 0 and 'world' in seen and not adb('shell', 'pidof', PKG, timeout=5):
+                say('gone', 'the game is no longer running', 'r'); break
+        time.sleep(1)
+    rc = proc.poll()
+    print(col('d', f'  launcher finished ({rc if rc is not None else "stopped"})'))
+
+def launch(cfg, from_menu=False):
+    json.dump(cfg, open(LAST, 'w'))
+    mp, mo = MAPS[cfg['map']], MODES[cfg['mode']]
+    secs = cfg['minutes'] * 60
+    env = dict(os.environ, WZM_GAMETYPE=mo[1], WZM_BOT_DIFF=str(cfg['diff']), WZM_CLASS=str(cfg.get('cls', 'pick')))
+    if mp[0] == 'Broadcast': env.update(WZM_ZONE_INJECT=BROADCAST_INJECT, WZM_SKIP_ENTCHK='1')
+    if adb('get-state') != 'device':
+        subprocess.run(['adb', 'connect', DEVICE], capture_output=True)
+        if adb('get-state') != 'device': print(col('r', '  Phone not reachable over ADB (127.0.0.1:5555). Check Wi-Fi debugging.')); return
+    if from_menu:
+        # the menu session (menu.sh) starts the match itself; stopping it would crash the game
+        if not adb('shell', 'pidof', PKG): print(col('r', '  the game is not running; type "menu" first')); return
+        subprocess.run([sys.executable, str(ROOT / 'analysis/user_tools/session_manager.py'), 'stop'], check=False)
+        print(col('d', '  starting from the live main menu (no restart; your Gear Up loadouts are used)'))
+        p = subprocess.Popen(['zsh', './match_from_menu.sh', mp[1], mo[1], str(cfg['enemies']), str(cfg['friends'])], cwd=LB, env=env,
+                             stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, start_new_session=True)
+        try:
+            for line in p.stdout:
+                line = line.strip()
+                if not line: continue
+                if 'botInjectFinal' in line or 'bothSidesVeteranGuard' in line: print(col('g', '  bots joined'))
+                elif line.startswith('{'): continue
+                else: print('  ' + line)
+        except KeyboardInterrupt:
+            print(col('y', '\n  stopped watching (the match keeps running)'))
+        return
+    stop_all(close_game=False)
+    old = tag_now()
+    if cfg['real']:
+        cmd = ['zsh', './play_mp.sh', mp[1], str(cfg['enemies']), str(cfg['friends']), str(secs)]
+    else:
+        env.update(WZM_MAP=mp[1], WZM_MENU_RETURN='0', WZM_BOOT_TRIES='6', WZM_BOOT_WAIT='25', WZM_BOOT_PROBE_WAIT='30')
+        if mp[1] == 'mp_mgl_wz2_sierra': env.update(WZM_PACK_INSTALLED='verdansk_pack_files.json', WZM_GFX_TEX='0')
+        cmd = ['zsh', './play_with_bots.sh', str(secs), str(cfg['enemies']), str(cfg['friends'])]
+    print(col('d', '  running: ' + ' '.join(cmd) + f'   (mode {mo[1]}, difficulty {cfg["diff"]})'))
+    logf = open(RT / 'wzm_launcher.out', 'w')
+    proc = subprocess.Popen(cmd, cwd=LB, env=env, stdout=logf, stderr=subprocess.STDOUT, start_new_session=True)
+    try: watch(proc, cfg, old)
+    except KeyboardInterrupt:
+        print(col('y', '\n  ending session…')); os.killpg(proc.pid, signal.SIGTERM); stop_all(close_game=False)
+
+SEEDED = pathlib.Path.home() / '.wzm_seeded_pid'
+
+def menu():
+    """Boot to the main menu with everything unlocked and saved loadouts restored; keeper keeps running."""
+    stop_all(close_game=False)
+    out = RT / 'wzm_menu.out'
+    subprocess.Popen(['zsh', './menu.sh'], cwd=LB, stdout=open(out, 'w'), stderr=subprocess.STDOUT, start_new_session=True)
+    print(col('d', '  booting to the main menu (logo stalls restart automatically)…'))
+    shown = 0
+    for _ in range(300):
+        txt = out.read_text(errors='ignore') if out.exists() else ''
+        lines = txt.splitlines()
+        for l in lines[shown:]: print('  ' + l)
+        shown = len(lines)
+        if 'Main menu ready' in txt or 'giving' in txt: break
+        time.sleep(2)
+    print(col('g', '  open GEAR UP on the phone. Your edits auto-save. Then type e.g. "broadcast 4v4 from menu".'))
+
+def unlock_all():
+    """Unlock everything and open Gear Up. Starter loadouts are seeded only once per game process."""
+    pid = adb('shell', 'pidof', PKG)
+    if not pid: print(col('r', '  the game is not running; play a match first, then Pause > Main Menu')); return
+    seeded = SEEDED.exists() and SEEDED.read_text().strip() == pid
+    print(col('d', '  at the main menu after a match: unlocking everything and opening Gear Up' + (' (keeping your edited loadouts)' if seeded else '')))
+    env = dict(os.environ, WZM_SKIP_SEED='1' if seeded else '0')
+    subprocess.run(['zsh', './unlock_all_menu.sh'], cwd=LB, env=env)
+    SEEDED.write_text(pid)
+
+HELP = f"""{col('b','Say what you want to play')}, e.g.
+  nuketown tdm 5 enemies 2 friends hardened 30 min
+  crash domination 3v3 veteran        verdansk 6 bots        nuketown no bots
+{col('b','Words it understands')}
+  maps: {', '.join(m[0].lower() for m in MAPS)}
+  modes: tdm, domination, hardpoint, kill confirmed, s&d, frontline
+  bots: '4 enemies', '2 friends', '3v3', '6 bots', 'placeholder' (bots that don't spawn), 'no bots'
+  difficulty: recruit, regular, hardened, veteran      time: '30 min', '2 hours'
+  loadout: 'pick loadout' (game's loadout screen, default) or 'class 3' (auto-pick preset 3)
+{col('b','Commands')}  menu (boot to main menu, all unlocked, loadouts restored) · '<game> from menu' (match without restart)\n           go/enter = launch · again · save · gear up · maps · modes · stop · quit"""
+
+def show_lists():
+    print(col('b', '  Maps'))
+    for m in MAPS: print(f"   {m[0]:16} {col('g' if m[3].startswith('tested') else 'y', m[3])}")
+    print(col('b', '  Modes'))
+    for m in MODES: print(f"   {m[0]:19} {col('g' if m[3]=='tested' else 'y', m[3])}")
+    print(col('d', '  Battle Royale is not playable offline yet.'))
+
+def main():
+    print(col('b', '\n  WZM Offline Launcher') + col('d', '  — type a game in plain English, or "help"'))
+    if len(sys.argv) > 1:
+        cfg, notes = parse(' '.join(sys.argv[1:]))
+        print(describe(cfg)); [print(col('y', '  note: ' + n)) for n in notes]
+        return launch(cfg)
+    try: import readline  # noqa: F401  (arrow keys / history)
+    except Exception: pass
+    cfg = None
+    while True:
+        try: line = input(col('c', '\n  wzm> ')).strip()
+        except (EOFError, KeyboardInterrupt): print(); return
+        low = line.lower()
+        if low in ('q', 'quit', 'exit'): return
+        if low in ('h', 'help', '?'): print(HELP); continue
+        if low in ('maps', 'modes', 'list'): show_lists(); continue
+        if low in ('stop', 'end', 'close'): stop_all(); print(col('g', '  session ended, game closed')); continue
+        if 'unlock' in low: unlock_all(); continue
+        if low in ('menu', 'main menu', 'home') or re.search(r'^(?:boot|open|go) (?:to )?(?:the )?(?:main )?menu$', low): menu(); continue
+        if low in ('save', 'save loadouts'): subprocess.run([str(ROOT / 'analysis/frida_venv/bin/python3'), 'save_loadouts.py'], cwd=LB); continue
+        if re.search(r'gear ?up|edit loadout|customi[sz]e', low): unlock_all(); continue
+        if re.search(r'from (?:the )?menu|no restart|keep loadout', low):
+            base = None
+            try: base = json.load(open(LAST))
+            except Exception: pass
+            rest = re.sub(r'(again|from (?:the )?menu|no restart|keep loadouts?)', ' ', low).strip()
+            cfg2, notes = parse(rest, base) if rest else (base or dict(DEFAULT), [])
+            cfg2['cls'] = 'pick'; print(describe(cfg2)); launch(cfg2, from_menu=True); continue
+        if low in ('again', 'last', 'repeat', 'same'):
+            try: cfg = json.load(open(LAST))
+            except Exception: print(col('y', '  no previous game yet')); continue
+            print(describe(cfg)); launch(cfg); continue
+        if low in ('', 'go', 'yes', 'y', 'start', 'launch', 'play'):
+            if cfg is None: print(col('y', '  tell me a game first, e.g. "nuketown tdm 4 bots"')); continue
+            launch(cfg); continue
+        cfg, notes = parse(line, cfg)
+        print(describe(cfg)); [print(col('y', '  note: ' + n)) for n in notes]
+        print(col('d', '  press Enter to launch, or type changes (e.g. "veteran", "3 friends")'))
+
+if __name__ == '__main__':
+    main()

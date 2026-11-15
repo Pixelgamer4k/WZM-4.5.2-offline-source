@@ -1,0 +1,26 @@
+WZM Offline — source package
+Generated 2026-11-15. Warzone Mobile 4.5.2, offline, in-APK.
+
+Top level:
+MANIFEST.txt
+README.md
+agent
+bridge
+build
+docs
+legacy_mac_kit
+tools
+
+docs/:
+00_FOR_AI_ASSISTANTS.md
+01_ARCHITECTURE.md
+02_BUILD_THE_APK.md
+03_INSTALL_AND_GAME_DATA.md
+04_FEATURES.md
+05_ADDRESSES_4.5.2.md
+06_DEV_TOOLS.md
+07_KNOWN_ISSUES_AND_OPEN_WORK.md
+history
+player
+
+Totals: 635 files,  13M
